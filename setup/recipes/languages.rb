@@ -1,8 +1,4 @@
-execute "Install Ruby" do
-  user node[:user]
-  command "rbenv install #{node[:ruby][:version]} && rbenv global #{node[:ruby][:version]}"
-  not_if "[[ $(rbenv version) =~ #{node[:ruby][:version]} ]]"
-end
+include_recipe "rbenv::user"
 
 execute "Install nodejs" do
   user node[:user]

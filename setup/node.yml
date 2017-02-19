@@ -26,11 +26,15 @@ packages:
 packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
-ruby:
-  version: 2.4.0
 nodejs:
   version: v6.9.5
 gems:
 - rfd
 - bundler
 - rubocop
+rbenv:
+  user: toku
+  global:
+    2.4.0
+  versions:
+    - 2.4.0
