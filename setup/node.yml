@@ -38,3 +38,10 @@ rbenv:
     2.4.0
   versions:
     - 2.4.0
+rbenv-default-gems:
+  default-gems:
+    - bundler
+    - rubocop
+    - rfd
+    - neovim
+  install: true
