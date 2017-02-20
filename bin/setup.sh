@@ -2,5 +2,7 @@
 
 set -x
 
-cd $(dirname $0)/..
-setup/mitamae-x86_64-darwin local -y setup/node.yml setup/init.rb
+bin_dir=$(dirname $0)
+root_dir=$bin_dir/..
+cd $root_dir
+$bin_dir/mitamae-x86_64-darwin local -y node.yml init.rb
