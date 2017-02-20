@@ -34,6 +34,7 @@ gems:
 - rubocop
 rbenv:
   user: toku
+  group: staff
   global:
     2.4.0
   versions:
