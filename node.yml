@@ -32,6 +32,7 @@ gems:
 - rfd
 - bundler
 - rubocop
+- mgem
 rbenv:
   user: toku
   group: staff
