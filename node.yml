@@ -4,6 +4,7 @@ packages:
 - direnv
 - git
 - go
+- goenv
 - htop
 - httpie
 - hub
