@@ -52,3 +52,6 @@ ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - rails/rails
 - rails/webpacker
+pip:
+- powerline-status
+- awscli
