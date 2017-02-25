@@ -47,3 +47,7 @@ rbenv-default-gems:
     - rfd
     - neovim
   install: true
+ghq:
+- k0kubun/itamae-plugin-resource-ghq
+- rails/rails
+- rails/webpacker
