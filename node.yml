@@ -38,9 +38,9 @@ rbenv:
   user: toku
   group: staff
   global:
-    2.4.0
+    2.4.1
   versions:
-    - 2.4.0
+    - 2.4.1
 rbenv-default-gems:
   default-gems:
     - bundler
