@@ -4,3 +4,6 @@
 [submodule "plugins/itamae-plugin-resource-ghq"]
 	path = plugins/itamae-plugin-resource-ghq
 	url = git@github.com:k0kubun/itamae-plugin-resource-ghq.git
+[submodule "plugins/itamae-plugin-resource-pip"]
+	path = plugins/itamae-plugin-resource-pip
+	url = git@github.com:katsyoshi/itamae-plugin-resource-pip.git
