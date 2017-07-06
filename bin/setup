@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -x
+
+bin_dir=$(dirname $0)
+root_dir=$bin_dir/..
+cd $root_dir
+git submodule update -i
