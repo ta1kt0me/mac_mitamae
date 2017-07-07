@@ -1,5 +1,14 @@
 # Mac Mitamae
 
+Setup my machine via mitamae.
+
 ```
-bin/setup.sh
+# setup this project
+bin/setup
+
+# setup my machine
+bin/migrate
+
+# update mitamae and submodules
+bin/update
 ```
