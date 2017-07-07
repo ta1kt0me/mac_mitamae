@@ -31,11 +31,11 @@ packages_with_option:
 nodejs:
   version: v6.9.5
 gems:
-- rfd
 - bundler
-- rubocop
 - mgem
 - neovim
+- rfd
+- rubocop
 rbenv:
   user: toku
   group: staff
@@ -46,18 +46,18 @@ rbenv:
 rbenv-default-gems:
   default-gems:
     - bundler
-    - rubocop
-    - rfd
-    - neovim
     - mgem
+    - neovim
+    - rfd
+    - rubocop
   install: true
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - rails/rails
 - rails/webpacker
 pip:
-- powerline-status
 - awscli
+- powerline-status
 git_config:
 - key: core.editor
   value: vim
