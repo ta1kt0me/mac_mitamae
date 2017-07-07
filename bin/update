@@ -7,7 +7,7 @@ root_dir=$bin_dir/..
 cd $root_dir
 git submodule update
 # version=$(ruby -e "require 'json';puts JSON.parse(ARGV.join).dig('tag_name')" $(curl https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest))
-version="v1.4.3"
+version="v1.4.4"
 current_version=$(bin/mitamae-x86_64-darwin version)
 if [[ ! "${current_version#MItamae }" = "${version}" ]]; then
   wget -O - "https://github.com/itamae-kitchen/mitamae/releases/download/${version}/mitamae-x86_64-darwin.tar.gz" | tar zxvf - -C ${bin_dir}
