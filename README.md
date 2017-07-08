@@ -2,6 +2,12 @@
 
 Setup my machine via mitamae.
 
+## Requirement
+
+- Dropbox
+
+## Usage
+
 ```
 # setup this project
 bin/setup
