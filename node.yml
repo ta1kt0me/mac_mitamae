@@ -54,7 +54,8 @@ rbenv-default-gems:
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - rails/rails
-- rails/webpacker
+- ta1kt0me/vimrc
+- yochiyochirb/vimrc
 pip:
 - awscli
 - powerline-status
