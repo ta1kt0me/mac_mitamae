@@ -36,6 +36,8 @@ gems:
 - neovim
 - rfd
 - rubocop
+- rufo
+- scss_lint
 rbenv:
   user: toku
   group: staff
@@ -50,6 +52,8 @@ rbenv-default-gems:
     - neovim
     - rfd
     - rubocop
+    - rufo
+    - scss_lint
   install: true
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
