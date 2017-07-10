@@ -82,6 +82,8 @@ git_config:
   value: "push --force-with-lease"
 - key: alias.bcleanup
   value: "! git branch --merged master | grep -v '^* master$' | xargs git branch -d"
+- key: alias.files
+  value: "ls-files"
 - key: alias.rewrite
   value: "commit --am"
 - key: alias.conf
@@ -90,6 +92,8 @@ git_config:
   value: "! cat /Users/toku/.gitconfig"
 - key: alias.remaster
   value: "! git fetch && git rebase -i origin/master"
+- key: alias.release-tag
+  value: "! git tag RELEASE_$(date +%Y%m%d_%H%M) && git tag | tail -1"
 - key: ghq.root
   value: $HOME/.ghq
 - key: grep.lineNumber
