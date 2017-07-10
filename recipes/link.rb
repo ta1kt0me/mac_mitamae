@@ -7,6 +7,7 @@ links = [
   { from: ENV["HOME"] + "/.tmux.conf",        to: dropbox_path + "/Public/tmux/.tmux.conf" },
   { from: ENV["HOME"] + "/.gitignore_global", to: dropbox_path + "/share/dotfile/.gitignore_global" },
   { from: ENV["HOME"] + "/.rubocop.yml",      to: dropbox_path + "/Public/rubocop/.rubocop.yml" },
+  { from: ENV["HOME"] + "/.rufo",             to: dropbox_path + "/share/dotfile/.rufo" },
   { from: ENV["HOME"] + "/.sheets",           to: dropbox_path + "/Public/sheet/.sheets" },
   { from: ENV["HOME"] + "/.ssh",              to: dropbox_path + "/Dev/ssh" },
   { from: ENV["HOME"] + "/.vimrc.local",      to: dropbox_path + "/Public/vim/.vimrc.local" },
