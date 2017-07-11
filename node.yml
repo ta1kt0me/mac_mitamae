@@ -38,6 +38,7 @@ gems:
 - rubocop
 - rufo
 - scss_lint
+- gemdiff
 rbenv:
   user: toku
   group: staff
@@ -54,6 +55,7 @@ rbenv-default-gems:
     - rubocop
     - rufo
     - scss_lint
+    - gemdiff
   install: true
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
