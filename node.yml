@@ -3,6 +3,7 @@ user: toku
 packages:
 - direnv
 - fish
+- gauche
 - git
 - go
 - goenv
@@ -17,6 +18,7 @@ packages:
 - python3
 - rbenv
 - reattach-to-user-namespace
+- rlwrap
 - ruby-build
 - the_silver_searcher
 - tig
