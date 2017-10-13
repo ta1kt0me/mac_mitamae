@@ -21,6 +21,5 @@ bin/update
 
 ## TODO
 
-- Set submodule url to https protocol
 - install vimplug
 - rbenv for bash in installing at first
