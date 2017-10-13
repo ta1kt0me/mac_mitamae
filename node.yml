@@ -20,6 +20,7 @@ packages:
 - reattach-to-user-namespace
 - rlwrap
 - ruby-build
+- terminal-notifier
 - the_silver_searcher
 - tig
 - tmux
