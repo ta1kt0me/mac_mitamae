@@ -65,6 +65,7 @@ ghq:
 - rails/rails
 - ta1kt0me/vimrc
 - ta1kt0me/fish-config
+- ta1kt0me/mac_mitamae
 - yochiyochirb/vimrc
 pip:
 - awscli
