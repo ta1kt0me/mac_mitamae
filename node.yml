@@ -4,6 +4,7 @@ packages:
 - direnv
 - fish
 - gauche
+- ghq
 - git
 - go
 - goenv
@@ -64,6 +65,7 @@ ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - rails/rails
 - ta1kt0me/vimrc
+- ta1kt0me/fish-config
 - yochiyochirb/vimrc
 pip:
 - awscli
