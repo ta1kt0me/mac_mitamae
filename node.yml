@@ -26,6 +26,7 @@ packages:
 - tig
 - tmux
 - tree
+- yarn
 - z
 - zplug
 - zsh
