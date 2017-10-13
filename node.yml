@@ -14,7 +14,6 @@ packages:
 - jq
 - lua
 - mycli
-- nodebrew
 - peco
 - python3
 - rbenv
