@@ -21,5 +21,4 @@ bin/update
 
 ## TODO
 
-- install vimplug
 - rbenv for bash in installing at first
