@@ -18,7 +18,3 @@ bin/migrate
 # update mitamae and submodules
 bin/update
 ```
-
-## TODO
-
-- rbenv for bash in installing at first
