@@ -17,6 +17,7 @@ packages:
 - mysql
 - peco
 - python3
+- phantomjs
 - rbenv
 - reattach-to-user-namespace
 - rlwrap
