@@ -10,5 +10,5 @@ execute "Install nodejs" do
   nodebrew = "$HOME/.nodebrew/current/bin/nodebrew"
   user node[:user]
   command "#{nodebrew} install-binary #{node[:nodejs][:version]} && #{nodebrew} use #{node[:nodejs][:version]}"
-  not_if "[[ $(#{nodebrew} ls | grep current) =~ #{node[:nodejs][:version]} ]]"
+  only_if "[[ -z $(#{nodebrew} ls | grep #{node[:nodejs][:version]} ]]"
 end
