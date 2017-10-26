@@ -3,6 +3,7 @@ user: toku
 packages:
 - direnv
 - fish
+- fontconfig
 - gauche
 - ghq
 - git
@@ -57,6 +58,7 @@ rbenv-default-gems:
   install: true
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
+- powerline/fonts
 - rails/rails
 - ta1kt0me/vimrc
 - ta1kt0me/fish-config
