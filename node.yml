@@ -20,6 +20,7 @@ packages:
 - peco
 - python3
 - phantomjs
+- postgresql
 - rbenv
 - reattach-to-user-namespace
 - rlwrap
