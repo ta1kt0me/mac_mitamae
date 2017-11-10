@@ -10,6 +10,7 @@ packages:
 - gnu-sed
 - go
 - goenv
+- heroku
 - htop
 - httpie
 - hub
