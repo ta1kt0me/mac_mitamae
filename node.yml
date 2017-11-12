@@ -114,3 +114,46 @@ git_config:
   value: true
 - key: http.https://gopkg.in.followredirects
   value: true
+tig_config:
+  set:
+    - "main-view = id date author commit-title:graph=yes,refs=yes"
+  bind:
+    - view: main
+      keybind: <Ctrl-r>
+      value: '!bash -c "git rebase -i %(commit)~1"'
+    - view: diff
+      keybind: <Ctrl-c>
+      value: '@bash -c "echo -n %(commit) | pbcopy"'
+    - view: log
+      keybind: <Ctrl-c>
+      value: '@bash -c "echo -n %(commit) | pbcopy"'
+    - view: main
+      keybind: <Ctrl-c>
+      value: '@bash -c "echo -n %(commit) | pbcopy"'
+    - view: diff
+      keybind: <Ctrl-y>
+      value: '@bash -c "git log --pretty=oneline --format=%s %(commit) | head -n 1 | pbcopy"'
+    - view: log
+      keybind: <Ctrl-y>
+      value: '@bash -c "git log --pretty=oneline --format=%s %(commit) | head -n 1 | pbcopy"'
+    - view: main
+      keybind: <Ctrl-y>
+      value: '@bash -c "git log --pretty=oneline --format=%s %(commit) | head -n 1 | pbcopy"'
+    - view: main
+      keybind: <Ctrl-o>
+      value: '@bash -c "git checkout %(commit)"'
+    - view: refs
+      keybind: <Ctrl-o>
+      value: '@bash -c "git checkout %(commit)"'
+    - view: blame
+      keybind: <Ctrl-b>
+      value: '@bash -c "hub browse -- commit/%(commit)"'
+    - view: diff
+      keybind: <Ctrl-b>
+      value: '@bash -c "hub browse -- commit/%(commit)"'
+    - view: log
+      keybind: <Ctrl-b>
+      value: '@bash -c "hub browse -- commit/%(commit)"'
+    - view: main
+      keybind: <Ctrl-b>
+      value: '@bash -c "hub browse -- commit/%(commit)"'
