@@ -39,7 +39,7 @@ packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
 nodejs:
-  version: v6.11.3
+  version: v8.9.2
 rbenv:
   user: toku
   group: staff
