@@ -72,6 +72,8 @@ ghq:
 pip:
 - awscli
 - powerline-status
+- ansible
+- boto
 git_config:
 - key: core.editor
   value: vim
