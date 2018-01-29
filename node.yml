@@ -94,6 +94,8 @@ git_config:
   value: "push --force-with-lease"
 - key: alias.bcleanup
   value: "! git branch --merged master | grep -v '^* master$' | xargs git branch -d"
+- key: alias.bbetween
+  value: "! f() { git log --format=format:%d \\$(git show-branch --sha1-name \\$1 HEAD | tail -1 | cut -d ' ' -f 2 | gsed -e 's/\\(\\[\\|\\]\\)//g')..HEAD | grep -v '^\\s*$'; }; f"
 - key: alias.files
   value: "ls-files"
 - key: alias.rewrite
