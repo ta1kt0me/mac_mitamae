@@ -15,14 +15,17 @@ packages:
 - httpie
 - hub
 - jq
+- libffi
+- libyaml
 - lua
 - mdcat
 - mycli
 - mysql
+- openssl
 - peco
-- python3
 - phantomjs
 - postgresql
+- python3
 - rbenv
 - reattach-to-user-namespace
 - rlwrap
@@ -42,8 +45,6 @@ packages_with_option:
 nodejs:
   version: v8.9.2
 rbenv:
-  user: toku
-  group: staff
   global:
     2.5.1
   versions:
@@ -53,17 +54,15 @@ rbenv:
     - 2.4.3
     - 2.5.0
     - 2.5.1
-rbenv-default-gems:
-  default-gems:
-    - bundler
-    - mgem
-    - neovim
-    - rfd
-    - rubocop
-    - rufo
-    - scss_lint
-    - gemdiff
-  install: true
+rbenv_default_gems:
+- bundler
+- mgem
+- neovim
+- rfd
+- rubocop
+- rufo
+- scss_lint
+- gemdiff
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - powerline/fonts
