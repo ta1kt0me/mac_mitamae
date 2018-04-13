@@ -28,10 +28,10 @@ packages:
 - python3
 - rbenv
 - reattach-to-user-namespace
+- ripgrep
 - rlwrap
 - ruby-build
 - terminal-notifier
-- the_silver_searcher
 - tig
 - tmux
 - tree
