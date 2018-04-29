@@ -42,3 +42,19 @@ node[:rbenv][:global].tap do |version|
     not_if "test $(rbenv version-name | grep #{version})"
   end
 end
+
+node[:pyenv][:versions].each do |version|
+  execute "Install python #{version}" do
+    user node[:user]
+    command "pyenv install #{version}"
+    not_if "test $(pyenv versions --bare | grep #{version})"
+  end
+end
+
+node[:pyenv][:global].tap do |version|
+  execute "Set pyenv global #{version}" do
+    user node[:user]
+    command "pyenv global #{version}"
+    not_if "test $(pyenv version-name | grep #{version})"
+  end
+end

@@ -25,7 +25,8 @@ packages:
 - peco
 - phantomjs
 - postgresql
-- python3
+- pyenv
+- python
 - rbenv
 - reattach-to-user-namespace
 - ripgrep
@@ -54,6 +55,12 @@ rbenv:
     - 2.4.3
     - 2.5.0
     - 2.5.1
+pyenv:
+  global:
+    3.6.5
+  versions:
+    - 2.7.14
+    - 3.6.5
 rbenv_default_gems:
 - bundler
 - mgem
