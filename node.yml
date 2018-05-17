@@ -1,6 +1,7 @@
 ---
 user: toku
 packages:
+- bat
 - direnv
 - fish
 - fontconfig
