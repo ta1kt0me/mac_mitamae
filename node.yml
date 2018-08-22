@@ -45,7 +45,7 @@ packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
 nodejs:
-  version: v8.9.2
+  version: v8.10.0
 rbenv:
   global:
     2.5.1
