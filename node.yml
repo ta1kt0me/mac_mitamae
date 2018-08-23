@@ -62,6 +62,12 @@ pyenv:
   versions:
     - 2.7.14
     - 3.6.5
+goenv:
+  global:
+    1.10.3
+  versions:
+    - 1.9.7
+    - 1.10.3
 rbenv_default_gems:
 - bundler
 - mgem

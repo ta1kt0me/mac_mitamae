@@ -1,3 +1,4 @@
+# nodebrew
 execute "Install nodebrew" do
   user node[:user]
   command "curl -L git.io/nodebrew | perl - setup"
@@ -10,6 +11,7 @@ execute "Install nodejs" do
   not_if "[[ ! -z $(#{nodebrew} ls | grep #{node[:nodejs][:version]}) ]]"
 end
 
+# rbenv
 RBENV_PATH = ENV["HOME"] + "/.rbenv"
 DEFAULT_GEM_PATH = RBENV_PATH + "/default-gems"
 
@@ -43,6 +45,7 @@ node[:rbenv][:global].tap do |version|
   end
 end
 
+# pyenv
 node[:pyenv][:versions].each do |version|
   execute "Install python #{version}" do
     user node[:user]
@@ -56,5 +59,22 @@ node[:pyenv][:global].tap do |version|
     user node[:user]
     command "pyenv global #{version}"
     not_if "test $(pyenv version-name | grep #{version})"
+  end
+end
+
+# goenv
+node[:goenv][:versions].each do |version|
+  execute "Install go #{version}" do
+    user node[:user]
+    command "goenv install #{version}"
+    not_if "test $(goenv versions --bare | grep #{version})"
+  end
+end
+
+node[:goenv][:global].tap do |version|
+  execute "Set goenv global #{version}" do
+    user node[:user]
+    command "goenv global #{version}"
+    not_if "test $(goenv version-name | grep #{version})"
   end
 end
