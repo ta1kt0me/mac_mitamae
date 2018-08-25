@@ -78,3 +78,26 @@ node[:goenv][:global].tap do |version|
     not_if "test $(goenv version-name | grep #{version})"
   end
 end
+
+GO_PATH = ENV["HOME"] + "/src"
+GO_BIN = GO_PATH + "/bin"
+["go-get-release", "detect-latest-release"].each do |pkg|
+  execute "Download #{pkg}" do
+    user node[:user]
+    command "GOBIN=#{GO_BIN} go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
+    not_if "test -e #{GO_BIN}/#{pkg}"
+  end
+end
+
+execute "Install dep" do
+  user node[:user]
+  command "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | GOBIN=#{GO_BIN} sh"
+  not_if "test -e #{GO_BIN}/dep"
+end
+
+node[:go_packages].each do |package|
+  execute "Install #{package}" do
+    user node[:user]
+    command "GOPATH=#{GO_PATH} #{GO_BIN}/go-get-release github.com/#{package}"
+  end
+end

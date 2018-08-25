@@ -2,11 +2,9 @@
 user: toku
 packages:
 - bat
-- direnv
 - fish
 - fontconfig
 - gauche
-- ghq
 - git
 - gnu-sed
 - go
@@ -23,7 +21,6 @@ packages:
 - mycli
 - mysql
 - openssl
-- peco
 - phantomjs
 - postgresql
 - pyenv
@@ -41,6 +38,10 @@ packages:
 - z
 - zplug
 - zsh
+go_packages:
+- direnv/direnv
+- motemen/ghq
+- peco/peco
 packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
