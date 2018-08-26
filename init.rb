@@ -1,5 +1,6 @@
 include_recipe "./recipes/git_config.rb"
 include_recipe "./recipes/tig_config.rb"
+include_recipe "./recipes/git.rb"
 include_recipe "./recipes/homebrew.rb"
 include_recipe "./recipes/packages.rb"
 include_recipe "./recipes/ghq.rb"

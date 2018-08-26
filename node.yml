@@ -7,11 +7,8 @@ packages:
 - gauche
 - git
 - gnu-sed
-- go
-- goenv
 - heroku
 - htop
-- httpie
 - hub
 - jq
 - libffi
@@ -22,12 +19,9 @@ packages:
 - openssl
 - phantomjs
 - postgresql
-- pyenv
 - python
-- rbenv
 - reattach-to-user-namespace
 - rlwrap
-- ruby-build
 - terminal-notifier
 - tig
 - tmux
@@ -44,6 +38,15 @@ rust_packages:
 - bat
 - mdcat
 - ripgrep
+git:
+- repo: "git@github.com:syndbg/goenv.git"
+  dist: ".goenv"
+- repo: "git@github.com:pyenv/pyenv.git"
+  dist: ".pyenv"
+- repo: "git@github.com:rbenv/rbenv.git"
+  dist: ".rbenv"
+- repo: "git@github.com:rbenv/ruby-build.git"
+  dist: ".rbenv/plugins/ruby-build"
 packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
@@ -94,10 +97,11 @@ ghq:
 - ta1kt0me/mac_mitamae
 - yochiyochirb/vimrc
 pip:
-- awscli
-- powerline-status
 - ansible
+- awscli
 - boto
+- httpie
+- powerline-status
 git_config:
 - key: core.editor
   value: vim
