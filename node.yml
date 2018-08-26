@@ -1,7 +1,7 @@
 ---
 user: toku
 packages:
-- bat
+- cmake
 - fish
 - fontconfig
 - gauche
@@ -17,7 +17,6 @@ packages:
 - libffi
 - libyaml
 - lua
-- mdcat
 - mycli
 - mysql
 - openssl
@@ -27,7 +26,6 @@ packages:
 - python
 - rbenv
 - reattach-to-user-namespace
-- ripgrep
 - rlwrap
 - ruby-build
 - terminal-notifier
@@ -42,6 +40,10 @@ go_packages:
 - direnv/direnv
 - motemen/ghq
 - peco/peco
+rust_packages:
+- bat
+- mdcat
+- ripgrep
 packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
@@ -63,6 +65,11 @@ pyenv:
   versions:
     - 2.7.14
     - 3.6.5
+rust:
+  global:
+    1.28.0
+  versions:
+    - 1.28.0
 goenv:
   global:
     1.10.3
