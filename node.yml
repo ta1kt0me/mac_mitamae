@@ -7,7 +7,6 @@ packages:
 - gauche
 - git
 - gnu-sed
-- heroku
 - htop
 - hub
 - jq
@@ -26,7 +25,6 @@ packages:
 - tig
 - tmux
 - tree
-- yarn
 - z
 - zplug
 - zsh
@@ -102,6 +100,9 @@ pip:
 - boto
 - httpie
 - powerline-status
+npm:
+- heroku
+- yarn
 git_config:
 - key: core.editor
   value: vim
