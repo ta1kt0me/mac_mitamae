@@ -111,8 +111,8 @@ end
 RSVM_HOME = ENV["HOME"] + "/.rsvm"
 execute "Link fish-config for rsvm" do
   user node[:user]
-  command "ln -s #{RSVM_HOME}/rsvm.fish ${HOME}/.config/fish/functions"
-  not_if "test -e ${HOME}/.config/fish/functions/rsvm.fish"
+  command "ln -s #{RSVM_HOME}/rsvm.fish $HOME/.config/fish/functions"
+  not_if "test -e $HOME/.config/fish/functions/rsvm.fish"
 end
 
 node[:rust][:versions].each do |version|
