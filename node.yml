@@ -12,7 +12,6 @@ packages:
 - jq
 - libffi
 - libyaml
-- lua
 - mycli
 - mysql
 - openssl
