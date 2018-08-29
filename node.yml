@@ -6,27 +6,35 @@ packages:
 - fontconfig
 - gauche
 - git
-- gnu-sed
 - htop
 - hub
 - jq
-- libffi
-- libyaml
 - mycli
-- mysql
 - openssl
 - phantomjs
 - postgresql
 - python
 - reattach-to-user-namespace
 - rlwrap
-- terminal-notifier
 - tig
 - tmux
 - tree
 - z
 - zplug
 - zsh
+homebrew_packages:
+- gnu-sed
+- hub
+- libffi
+- libyaml
+- mysql
+- terminal-notifier
+linuxbrew_packages:
+- hub
+apt_packages:
+- libffi-dev
+- libyaml-dev
+- mysql-client
 go_packages:
 - direnv/direnv
 - motemen/ghq
@@ -89,6 +97,7 @@ ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - powerline/fonts
 - rails/rails
+- rupa/z
 - ta1kt0me/vimrc
 - ta1kt0me/fish-config
 - ta1kt0me/mac_mitamae
