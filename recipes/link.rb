@@ -21,7 +21,6 @@ links = [
   { from: config_path + "/powerline",         to: dropbox_path + "/Public/powerline" },
   { from: config_path + "/nvim",              to: ghq_path + "/github.com/ta1kt0me/vimrc/.vim" },
   { from: config_path + "/nvim/init.vim",     to: ghq_path + "/github.com/ta1kt0me/vimrc/.vimrc" },
-  { from: config_path + "/fish",              to: ghq_path + "/github.com/ta1kt0me/fish-config" },
   { from: config_path + "/fish/local.fish",   to: dropbox_path + "/Public/fish/local.fish" },
   { from: config_path + "/peco",              to: dropbox_path + "/Public/peco" }
 ]

@@ -8,7 +8,7 @@ execute "Install nodejs" do
   nodebrew = "$HOME/.nodebrew/current/bin/nodebrew"
   user node[:user]
   command "#{nodebrew} install-binary #{node[:nodejs][:version]} && #{nodebrew} use #{node[:nodejs][:version]}"
-  not_if "[[ ! -z $(#{nodebrew} ls | grep #{node[:nodejs][:version]}) ]]"
+  not_if "test -n \"$(#{nodebrew} ls | grep #{node[:nodejs][:version]})\""
 end
 
 # rbenv
@@ -46,36 +46,38 @@ node[:rbenv][:global].tap do |version|
 end
 
 # pyenv
+pyenv = "#{ENV["HOME"]}/.pyenv/bin/pyenv"
 node[:pyenv][:versions].each do |version|
   execute "Install python #{version}" do
     user node[:user]
-    command "pyenv install #{version}"
-    not_if "test $(pyenv versions --bare | grep #{version})"
+    command "#{pyenv} install #{version}"
+    not_if "test $(#{pyenv} versions --bare | grep #{version})"
   end
 end
 
 node[:pyenv][:global].tap do |version|
   execute "Set pyenv global #{version}" do
     user node[:user]
-    command "pyenv global #{version}"
-    not_if "test $(pyenv version-name | grep #{version})"
+    command "#{pyenv} global #{version}"
+    not_if "test $(#{pyenv} version-name | grep #{version})"
   end
 end
 
 # goenv
+goenv = "#{ENV["HOME"]}/.goenv/bin/goenv"
 node[:goenv][:versions].each do |version|
   execute "Install go #{version}" do
     user node[:user]
-    command "goenv install #{version}"
-    not_if "test $(goenv versions --bare | grep #{version})"
+    command "#{goenv} install #{version}"
+    not_if "test $(#{goenv} versions --bare | grep #{version})"
   end
 end
 
 node[:goenv][:global].tap do |version|
   execute "Set goenv global #{version}" do
     user node[:user]
-    command "goenv global #{version}"
-    not_if "test $(goenv version-name | grep #{version})"
+    command "#{goenv} global #{version}"
+    not_if "test $(#{goenv} version-name | grep #{version})"
   end
 end
 

@@ -14,7 +14,7 @@ if node[:platform] == "ubuntu"
   end
 
   node[:linuxbrew_packages].each do |item|
-    LINUX_BREW = "#{HOME}/.linuxbrew/bin/brew"
+    LINUX_BREW = "#{ENV["HOME"]}/.linuxbrew/bin/brew"
     execute "Install #{item}" do
       user node[:user]
       command "#{LINUX_BREW} install #{item}"
