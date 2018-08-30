@@ -8,7 +8,7 @@ cd $root_dir
 os=$(uname)
 
 if [[ "$os" -eq "Linux" ]]; then
-  $bin_dir/mitamae-x86_64-linux local -y node.yml init.rb
+  $bin_dir/mitamae-x86_64-linux local -y node.yml --shell=/bin/bash init.rb
 else
   $bin_dir/mitamae-x86_64-darwin local -y node.yml init.rb
 fi

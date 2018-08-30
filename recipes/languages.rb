@@ -83,17 +83,18 @@ end
 
 GO_PATH = ENV["HOME"] + "/src"
 GO_BIN = GO_PATH + "/bin"
+goexe = "#{ENV["HOME"]}/.goenv/shims/go"
 ["go-get-release", "detect-latest-release"].each do |pkg|
   execute "Download #{pkg}" do
     user node[:user]
-    command "GOBIN=#{GO_BIN} go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
+    command "GOBIN=#{GO_BIN} #{goexe} get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
     not_if "test -e #{GO_BIN}/#{pkg}"
   end
 end
 
 execute "Install dep" do
   user node[:user]
-  command "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | GOBIN=#{GO_BIN} sh"
+  command "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | PATH=#{ENV["HOME"]}/.goenv/shims:$PATH GOBIN=#{GO_BIN} sh"
   not_if "test -e #{GO_BIN}/dep"
 end
 
