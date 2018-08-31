@@ -1,11 +1,7 @@
 dropbox_path = ENV["HOME"] + "/Dropbox"
 config_path  = ENV["HOME"] + "/.config"
-ghq_path     = `git config --get ghq.root`.gsub("\n", "")
 
 links = [
-  { from: ENV["HOME"] + "/.vimrc",            to: ghq_path + "/github.com/ta1kt0me/vimrc/.vimrc" },
-  { from: ENV["HOME"] + "/.vim/after",        to: ghq_path + "/github.com/ta1kt0me/vimrc/.vim/after" },
-  { from: ENV["HOME"] + "/.vim/snippets",     to: ghq_path + "/github.com/ta1kt0me/vimrc/.vim/snippets" },
   { from: ENV["HOME"] + "/.tmux.conf",        to: dropbox_path + "/Public/tmux/.tmux.conf" },
   { from: ENV["HOME"] + "/.gitignore_global", to: dropbox_path + "/share/dotfile/.gitignore_global" },
   { from: ENV["HOME"] + "/.rubocop.yml",      to: dropbox_path + "/Public/rubocop/.rubocop.yml" },
@@ -20,8 +16,6 @@ links = [
   { from: ENV["HOME"] + "/.vim/ftplugin",     to: dropbox_path + "/Public/vim/.vim/ftplugin" },
   { from: ENV["HOME"] + "/vimwiki",           to: dropbox_path + "/Public/vim/vimwiki" },
   { from: config_path + "/powerline",         to: dropbox_path + "/Public/powerline" },
-  { from: config_path + "/nvim",              to: ghq_path + "/github.com/ta1kt0me/vimrc/.vim" },
-  { from: config_path + "/nvim/init.vim",     to: ghq_path + "/github.com/ta1kt0me/vimrc/.vimrc" },
   { from: config_path + "/fish/local.fish",   to: dropbox_path + "/Public/fish/local.fish" },
   { from: config_path + "/peco",              to: dropbox_path + "/Public/peco" }
 ]
