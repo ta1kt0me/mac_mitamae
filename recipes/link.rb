@@ -12,6 +12,7 @@ links = [
   { from: ENV["HOME"] + "/.rufo",             to: dropbox_path + "/share/dotfile/.rufo" },
   { from: ENV["HOME"] + "/.sheets",           to: dropbox_path + "/Public/sheet/.sheets" },
   { from: ENV["HOME"] + "/.ssh",              to: dropbox_path + "/Dev/ssh" },
+  { from: ENV["HOME"] + "/.essh",             to: dropbox_path + "/Dev/essh" },
   { from: ENV["HOME"] + "/.vimrc.local",      to: dropbox_path + "/Public/vim/.vimrc.local" },
   { from: ENV["HOME"] + "/.vimrc.preset",     to: dropbox_path + "/Public/vim/.vimrc.preset" },
   { from: ENV["HOME"] + "/.vim/colors",       to: dropbox_path + "/Public/vim/.vim/colors" },
