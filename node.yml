@@ -39,6 +39,7 @@ go_packages:
 - direnv/direnv
 - motemen/ghq
 - peco/peco
+- kohkimakimoto/essh
 rust_packages:
 - bat
 - mdcat
