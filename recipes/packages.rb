@@ -10,6 +10,7 @@ end
 
 if node[:platform] == "ubuntu"
   node[:apt_packages].each do |item|
+    user node[:user]
     package item
   end
 

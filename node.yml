@@ -19,6 +19,7 @@ packages:
 - tree
 - zplug
 - zsh
+- graphviz
 homebrew_packages:
 - gnu-sed
 - hub
