@@ -14,6 +14,7 @@ end
 # rbenv
 RBENV_PATH = ENV["HOME"] + "/.rbenv"
 DEFAULT_GEM_PATH = RBENV_PATH + "/default-gems"
+RBENV_EXE = RBENV_PATH + "/bin/rbenv"
 
 execute "Create rbenv-default-gems file" do
   user node[:user]
@@ -32,16 +33,16 @@ end
 node[:rbenv][:versions].each do |version|
   execute "Install ruby #{version}" do
     user node[:user]
-    command "rbenv install #{version}"
-    not_if "test $(rbenv versions --bare | grep #{version})"
+    command "#{RBENV_EXE} install #{version}"
+    not_if "test $(#{RBENV_EXE} versions --bare | grep #{version})"
   end
 end
 
 node[:rbenv][:global].tap do |version|
   execute "Set rbenv global #{version}" do
     user node[:user]
-    command "rbenv global #{version}"
-    not_if "test $(rbenv version-name | grep #{version})"
+    command "#{RBENV_EXE} global #{version}"
+    not_if "test $(#{RBENV_EXE} version-name | grep #{version})"
   end
 end
 
