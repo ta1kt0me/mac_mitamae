@@ -1,17 +1,29 @@
 node[:packages].each do |item|
-  package item
+  package item do
+    user node[:user]
+  end
 end
 
 if node[:platform] == "darwin"
   node[:homebrew_packages].each do |item|
-    package item
+    package item do
+      user node[:user]
+    end
+  end
+
+  node[:packages_with_option].each do |item|
+    package item[:name] do
+      user node[:user]
+      options item[:options]
+    end
   end
 end
 
 if node[:platform] == "ubuntu"
   node[:apt_packages].each do |item|
-    user node[:user]
-    package item
+    package item do
+      user node[:user]
+    end
   end
 
   node[:linuxbrew_packages].each do |item|
@@ -21,11 +33,5 @@ if node[:platform] == "ubuntu"
       command "#{LINUX_BREW} install #{item}"
       not_if "test -n $(#{LINUX_BREW} list | grep #{item})"
     end
-  end
-end
-
-node[:packages_with_option].each do |item|
-  package item[:name] do
-    options item[:options]
   end
 end

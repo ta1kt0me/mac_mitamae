@@ -11,6 +11,7 @@ links = [
 
 links.each do |link|
   link link[:from] do
+    user node[:user]
     to link[:to]
   end
 end

@@ -1,4 +1,5 @@
 ghq "vim/vim" do
+  user node[:user]
   action :update
   options "-p --shallow"
 end
