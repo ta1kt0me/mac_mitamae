@@ -16,7 +16,6 @@ links = [
   { from: ENV["HOME"] + "/.vim/ftplugin",     to: dropbox_path + "/Public/vim/.vim/ftplugin" },
   { from: ENV["HOME"] + "/vimwiki",           to: dropbox_path + "/Public/vim/vimwiki" },
   { from: config_path + "/powerline",         to: dropbox_path + "/Public/powerline" },
-  { from: config_path + "/fish/local.fish",   to: dropbox_path + "/Public/fish/local.fish" },
   { from: config_path + "/peco",              to: dropbox_path + "/Public/peco" }
 ]
 
