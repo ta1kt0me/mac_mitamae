@@ -1,19 +1,14 @@
 node[:packages].each do |item|
-  package item do
-    user node[:user]
-  end
+  package item
 end
 
 if node[:platform] == "darwin"
   node[:homebrew_packages].each do |item|
-    package item do
-      user node[:user]
-    end
+    package item
   end
 
   node[:packages_with_option].each do |item|
     package item[:name] do
-      user node[:user]
       options item[:options]
     end
   end
@@ -21,9 +16,7 @@ end
 
 if node[:platform] == "ubuntu"
   node[:apt_packages].each do |item|
-    package item do
-      user node[:user]
-    end
+    package item
   end
 
   node[:linuxbrew_packages].each do |item|
