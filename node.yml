@@ -30,6 +30,9 @@ homebrew_packages:
 linuxbrew_packages:
 - hub
 apt_packages:
+- curl
+- gnome-tweak-tools
+- gnome-tweaks
 - libffi-dev
 - libreadline-dev
 - libssl-dev
