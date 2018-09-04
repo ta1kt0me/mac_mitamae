@@ -83,7 +83,7 @@ end
 
 GO_PATH = ENV["HOME"] + "/src"
 GO_BIN = GO_PATH + "/bin"
-goexe = "#{ENV["HOME"]}/.goenv/shims/go"
+goexe = "#{ENV['HOME']}/.goenv/shims/go"
 ["go-get-release", "detect-latest-release"].each do |pkg|
   execute "Download #{pkg}" do
     user node[:user]
