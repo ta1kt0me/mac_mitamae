@@ -1,5 +1,6 @@
 include_recipe "./recipes/git_config.rb"
 include_recipe "./recipes/tig_config.rb"
+include_recipe "./recipes/mkdir.rb"
 include_recipe "./recipes/scripts.rb" if node[:platform] == "ubuntu"
 include_recipe "./recipes/dropbox_link.rb"
 include_recipe "./recipes/git.rb"
