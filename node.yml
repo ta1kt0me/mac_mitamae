@@ -29,7 +29,10 @@ homebrew_packages:
 - terminal-notifier
 linuxbrew_packages:
 - hub
+apt_repositories:
+- ppa:communitheme/ppa
 apt_packages:
+- software-properties-common
 - curl
 - gnome-tweak-tool
 - gnome-tweaks
