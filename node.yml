@@ -44,6 +44,7 @@ apt_packages:
 - mysql-client
 - pkg-config
 - ubuntu-communitheme-session
+- vim-gnome
 - zlib1g-dev
 go_packages:
 - direnv/direnv
