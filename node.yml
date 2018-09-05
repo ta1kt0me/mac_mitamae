@@ -35,6 +35,7 @@ apt_repositories:
 apt_packages:
 - software-properties-common
 - curl
+- fcitx-mozc
 - gnome-tweak-tool
 - gnome-tweaks
 - libffi-dev
