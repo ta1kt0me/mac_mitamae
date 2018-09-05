@@ -124,6 +124,7 @@ pip:
 - awscli
 - boto
 - httpie
+- docker-compose
 - powerline-status
 npm:
 - heroku
