@@ -36,8 +36,10 @@ apt_packages:
 - software-properties-common
 - curl
 - fcitx-mozc
+- gnome-shell-extensions
 - gnome-tweak-tool
 - gnome-tweaks
+- gnome-weather
 - libffi-dev
 - libreadline-dev
 - libssl-dev
@@ -45,6 +47,7 @@ apt_packages:
 - mysql-client
 - pkg-config
 - ubuntu-communitheme-session
+- ubuntu-restricted-extras
 - vim-gnome
 - zlib1g-dev
 go_packages:
