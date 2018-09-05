@@ -1,7 +1,7 @@
 ghq "vim/vim" do
   user node[:user]
   action :update
-  options "-p --shallow"
+  options "-p"
 end
 
 vimsrc = "#{ENV['HOME']}/.ghq/github.com/vim/vim"
