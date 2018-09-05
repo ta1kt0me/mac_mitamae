@@ -34,6 +34,8 @@ apt_repositories:
 - ppa:jonathonf/vim
 apt_packages:
 - software-properties-common
+- apt-transport-https
+- ca-certificates
 - chrome-gnome-shell
 - curl
 - fcitx-mozc
