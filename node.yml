@@ -39,6 +39,7 @@ apt_packages:
 - chrome-gnome-shell
 - curl
 - fcitx-mozc
+- flameshot
 - gnome-shell-extensions
 - gnome-tweak-tool
 - gnome-tweaks
