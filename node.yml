@@ -34,6 +34,7 @@ apt_repositories:
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
 - ppa:bookworm-team/bookworm
+- ppa:alexlarsson/flatpak
 apt_packages:
 - software-properties-common
 - apt-transport-https
@@ -43,7 +44,9 @@ apt_packages:
 - curl
 - fcitx-mozc
 - flameshot
+- flatpak
 - gnome-shell-extensions
+- gnome-software-plugin-flatpak
 - gnome-tweak-tool
 - gnome-tweaks
 - gnome-weather
