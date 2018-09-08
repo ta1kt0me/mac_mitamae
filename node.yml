@@ -32,9 +32,12 @@ linuxbrew_packages:
 apt_repositories:
 - ppa:communitheme/ppa
 - ppa:jonathonf/vim
+- ppa:ubuntuhandbook1/apps
+- ppa:bookworm-team/bookworm
 apt_packages:
 - software-properties-common
 - apt-transport-https
+- bookworm
 - ca-certificates
 - chrome-gnome-shell
 - curl
@@ -48,6 +51,8 @@ apt_packages:
 - libreadline-dev
 - libssl-dev
 - libyaml-dev
+- mupdf
+- mupdf-tools
 - mysql-client
 - pkg-config
 - ubuntu-communitheme-session
