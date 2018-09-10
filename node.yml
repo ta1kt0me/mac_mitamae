@@ -51,6 +51,7 @@ apt_packages:
 - gnome-tweaks
 - gnome-weather
 - libffi-dev
+- libmagickwand-dev
 - libreadline-dev
 - libssl-dev
 - libyaml-dev
