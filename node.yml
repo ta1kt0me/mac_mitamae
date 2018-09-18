@@ -27,8 +27,10 @@ homebrew_packages:
 - libyaml
 - mysql
 - terminal-notifier
+- terraform
 linuxbrew_packages:
 - hub
+- terraform
 apt_repositories:
 - ppa:communitheme/ppa
 - ppa:jonathonf/vim
