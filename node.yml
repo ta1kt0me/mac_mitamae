@@ -62,6 +62,7 @@ apt_packages:
 - mupdf-tools
 - mysql-client
 - pkg-config
+- terminator
 - ubuntu-communitheme-session
 - ubuntu-restricted-extras
 - vim-gnome
