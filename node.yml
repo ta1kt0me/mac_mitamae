@@ -54,6 +54,7 @@ apt_packages:
 - gnome-weather
 - libffi-dev
 - libmagickwand-dev
+- libmysqlclient-dev
 - libreadline-dev
 - libssl-dev
 - libyaml-dev
