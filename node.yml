@@ -69,10 +69,11 @@ apt_packages:
 - vim-gnome
 - zlib1g-dev
 go_packages:
+- bcicen/ctop
 - direnv/direnv
+- kohkimakimoto/essh
 - motemen/ghq
 - peco/peco
-- kohkimakimoto/essh
 rust_packages:
 - bat
 - mdcat
