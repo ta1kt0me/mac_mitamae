@@ -37,8 +37,10 @@ apt_repositories:
 - ppa:ubuntuhandbook1/apps
 - ppa:bookworm-team/bookworm
 - ppa:alexlarsson/flatpak
+- ppa:nilarimogard/webupd8
 apt_packages:
 - software-properties-common
+- albert
 - apt-transport-https
 - bookworm
 - ca-certificates
