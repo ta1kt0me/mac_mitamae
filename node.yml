@@ -92,6 +92,8 @@ git:
   dist: ".rbenv/plugins/ruby-build"
 - repo: "git@github.com:ta1kt0me/fish-config.git"
   dist: ".config/fish"
+- repo: "git@github.com:albertlauncher/python.git"
+  dist: ".local/share/albert/org.albert.extension.python/modules"
 packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
