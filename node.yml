@@ -144,6 +144,7 @@ pip:
 - boto
 - httpie
 - docker-compose
+- neovim
 - powerline-status
 npm:
 - heroku
