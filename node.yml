@@ -66,6 +66,7 @@ apt_packages:
 - mysql-client
 - pkg-config
 - terminator
+- terminix
 - ubuntu-communitheme-session
 - ubuntu-restricted-extras
 - vim-gnome
