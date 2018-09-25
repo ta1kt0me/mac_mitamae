@@ -38,6 +38,7 @@ apt_repositories:
 - ppa:bookworm-team/bookworm
 - ppa:alexlarsson/flatpak
 - ppa:nilarimogard/webupd8
+- ppa:teejee2008/ppa
 apt_packages:
 - software-properties-common
 - albert
@@ -67,6 +68,7 @@ apt_packages:
 - pkg-config
 - terminator
 - terminix
+- timeshift
 - ubuntu-communitheme-session
 - ubuntu-restricted-extras
 - vim-gnome
