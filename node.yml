@@ -71,7 +71,9 @@ apt_packages:
 - timeshift
 - ubuntu-communitheme-session
 - ubuntu-restricted-extras
+- vagrant
 - vim-gnome
+- virtualbox
 - zlib1g-dev
 go_packages:
 - bcicen/ctop

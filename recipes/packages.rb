@@ -24,7 +24,7 @@ if node[:platform] == "ubuntu"
     execute "Install #{item}" do
       user node[:user]
       command "#{LINUX_BREW} install #{item}"
-      not_if "test -n $(#{LINUX_BREW} list | grep #{item})"
+      not_if "test -n \"$(#{LINUX_BREW} list | grep #{item})\""
     end
   end
 end
