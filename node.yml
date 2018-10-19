@@ -50,6 +50,7 @@ apt_packages:
 - fcitx-mozc
 - flameshot
 - flatpak
+- gnome-screensaver
 - gnome-shell-extensions
 - gnome-software-plugin-flatpak
 - gnome-tweak-tool
