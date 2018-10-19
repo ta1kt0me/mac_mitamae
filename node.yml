@@ -154,6 +154,7 @@ pip:
 - neovim
 - powerline-status
 npm:
+- gtop
 - heroku
 - yarn
 git_config:
