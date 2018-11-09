@@ -68,7 +68,6 @@ apt_packages:
 - mysql-client
 - pkg-config
 - terminator
-- terminix
 - timeshift
 - ubuntu-communitheme-session
 - ubuntu-restricted-extras
