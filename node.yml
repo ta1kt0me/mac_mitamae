@@ -137,6 +137,7 @@ rbenv_default_gems:
 - rufo
 - scss_lint
 - gemdiff
+- gem-src
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
 - powerline/fonts
