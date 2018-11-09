@@ -32,11 +32,10 @@ linuxbrew_packages:
 - hub
 - terraform
 apt_repositories:
-- ppa:communitheme/ppa
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
 - ppa:bookworm-team/bookworm
-- ppa:alexlarsson/flatpak
+# - ppa:alexlarsson/flatpak
 - ppa:nilarimogard/webupd8
 - ppa:teejee2008/ppa
 apt_packages:
