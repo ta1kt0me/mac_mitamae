@@ -111,10 +111,10 @@ rbenv:
     - 2.5.1
 pyenv:
   global:
-    3.6.5
+    3.7.0
   versions:
-    - 2.7.14
     - 3.6.5
+    - 3.7.0
 rust:
   global:
     1.28.0
