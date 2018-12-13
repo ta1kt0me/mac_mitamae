@@ -82,6 +82,7 @@ go_packages:
 - kohkimakimoto/essh
 - motemen/ghq
 - peco/peco
+- sonots/lltsv
 rust_packages:
 - bat
 - mdcat
