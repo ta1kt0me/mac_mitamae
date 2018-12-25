@@ -2,6 +2,7 @@
 user: toku
 packages:
 - cmake
+- copyq
 - fish
 - fontconfig
 - gauche
