@@ -195,7 +195,7 @@ git_config:
 - key: alias.release-tag
   value: '! git tag RELEASE_\$(date +%Y%m%d_%H%M) && git tag | tail -1'
 - key: ghq.root
-  value: $HOME/.ghq
+  value: $HOME/src/src
 - key: grep.lineNumber
   value: true
 - key: push.default
