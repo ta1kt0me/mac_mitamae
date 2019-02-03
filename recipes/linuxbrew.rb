@@ -1,4 +1,4 @@
-LINUXBREW_PREFIX = "$HOME/.linuxbrew".freeze
+LINUXBREW_PREFIX = "#{ENV["HOME"]}/.linuxbrew".freeze
 
 execute "Make directory for linuxbrew" do
   user node[:user]
