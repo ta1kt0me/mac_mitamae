@@ -35,7 +35,6 @@ linuxbrew_packages:
 apt_repositories:
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
-- ppa:bookworm-team/bookworm
 # - ppa:alexlarsson/flatpak
 - ppa:nilarimogard/webupd8
 - ppa:teejee2008/ppa
@@ -43,7 +42,6 @@ apt_packages:
 - software-properties-common
 - albert
 - apt-transport-https
-- bookworm
 - ca-certificates
 - chrome-gnome-shell
 - curl
@@ -69,7 +67,6 @@ apt_packages:
 - pkg-config
 - terminator
 - timeshift
-- ubuntu-communitheme-session
 - ubuntu-restricted-extras
 - ukuu
 - vagrant
