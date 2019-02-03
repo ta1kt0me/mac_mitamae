@@ -104,11 +104,11 @@ nodejs:
   version: v8.10.0
 rbenv:
   global:
-    2.6.0
+    2.6.1
   versions:
     - 2.4.3
     - 2.5.1
-    - 2.6.0
+    - 2.6.1
 pyenv:
   global:
     3.7.0
