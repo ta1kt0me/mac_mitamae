@@ -11,8 +11,10 @@ git "#{LINUXBREW_PREFIX}/Homebrew" do
   repository "git@github.com:Homebrew/brew.git"
 end
 
-execute "Link brew command" do
-  user node[:user]
-  command "ln -s #{LINUXBREW_PREFIX}/Homebrew/bin #{LINUXBREW_PREFIX}/bin"
-  not_if "test -L #{LINUXBREW_PREFIX}/bin"
+%w(bin sbin).each do |dir|
+  execute "Link brew command in #{dir}" do
+    user node[:user]
+    command "ln -s #{LINUXBREW_PREFIX}/Homebrew/#{dir} #{LINUXBREW_PREFIX}/#{dir}"
+    not_if "test -L #{LINUXBREW_PREFIX}/#{dir}"
+  end
 end
