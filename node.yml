@@ -158,6 +158,8 @@ pip:
 npm:
 - gtop
 - heroku
+- ndb
+- puppeteer
 - yarn
 git_config:
 - key: core.editor
