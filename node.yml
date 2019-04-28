@@ -55,6 +55,7 @@ apt_packages:
 - gnome-tweak-tool
 - gnome-tweaks
 - gnome-weather
+- hplip-gui
 - libffi-dev
 - libmagickwand-dev
 - libmysqlclient-dev
@@ -66,6 +67,7 @@ apt_packages:
 - mupdf-tools
 - mysql-client
 - pkg-config
+- simple-scan
 - terminator
 - timeshift
 - ubuntu-restricted-extras
