@@ -43,6 +43,7 @@ apt_packages:
 - software-properties-common
 - albert
 - apt-transport-https
+- arp-scan
 - ca-certificates
 - chrome-gnome-shell
 - curl
