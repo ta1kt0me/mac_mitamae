@@ -158,6 +158,7 @@ pip:
 - docker-compose
 - neovim
 - powerline-status
+- pynvim
 npm:
 - gtop
 - heroku
