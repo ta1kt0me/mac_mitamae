@@ -127,10 +127,11 @@ rust:
     - 1.28.0
 goenv:
   global:
-    1.10.3
+    1.12.5
   versions:
     - 1.9.7
     - 1.10.3
+    - 1.12.5
 rbenv_default_gems:
 - bundler
 - mgem

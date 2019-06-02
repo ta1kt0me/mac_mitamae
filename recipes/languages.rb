@@ -102,27 +102,26 @@ node[:goenv][:global].tap do |version|
   end
 end
 
-GO_PATH = ENV["HOME"] + "/src"
-GO_BIN = GO_PATH + "/bin"
-goexe = "#{ENV['HOME']}/.goenv/shims/go"
+GOPATH = "/home/#{node[:user]}/go/#{node[:goenv][:global]}".freeze
+GOBIN = GOPATH + "/bin"
 ["go-get-release", "detect-latest-release"].each do |pkg|
   execute "Download #{pkg}" do
     user node[:user]
-    command "GOBIN=#{GO_BIN} #{goexe} get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
-    not_if "test -e #{GO_BIN}/#{pkg}"
+    command "GOBIN=#{GOBIN} #{ENV['HOME']}/.goenv/shims/go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
+    not_if "test -e #{GOBIN}/#{pkg}"
   end
 end
 
 execute "Install dep" do
   user node[:user]
-  command "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | PATH=#{ENV["HOME"]}/.goenv/shims:$PATH GOBIN=#{GO_BIN} sh"
-  not_if "test -e #{GO_BIN}/dep"
+  command "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | PATH=#{ENV['HOME']}/.goenv/shims:$PATH GOBIN=#{GOBIN} sh"
+  not_if "test -e #{GOBIN}/dep"
 end
 
 node[:go_packages].each do |package|
   execute "Install #{package}" do
     user node[:user]
-    command "GOPATH=#{GO_PATH} #{GO_BIN}/go-get-release github.com/#{package}"
+    command "GOPATH=#{GOPATH} #{GOBIN}/go-get-release github.com/#{package}"
   end
 end
 
