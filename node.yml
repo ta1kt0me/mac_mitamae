@@ -11,6 +11,7 @@ packages:
 - jo
 - jq
 - mycli
+- openssh-server
 - openssl
 - phantomjs
 - postgresql
