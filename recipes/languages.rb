@@ -106,14 +106,14 @@ node[:goenv][:global].tap do |version|
   ["go-get-release", "detect-latest-release"].each do |pkg|
     execute "Download #{pkg}" do
       user node[:user]
-      command "GOBIN=#{GOBIN} #{ENV['HOME']}/.goenv/shims/go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
+      command "#{ENV['HOME']}/.goenv/shims/go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
       not_if "test -e #{GOBIN}/#{pkg}"
     end
   end
 
-  execute "Install dep" do
+  execute "Download dep" do
     user node[:user]
-    command "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | PATH=#{ENV['HOME']}/.goenv/shims:$PATH GOBIN=#{GOBIN} sh"
+    command "#{ENV['HOME']}/.goenv/shims/go get -u github.com/golang/dep/cmd/dep"
     not_if "test -e #{GOBIN}/dep"
   end
 
