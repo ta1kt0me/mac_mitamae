@@ -69,6 +69,7 @@ apt_packages:
 - pkg-config
 - simple-scan
 - terminator
+- tilix
 - timeshift
 - ubuntu-restricted-extras
 - ukuu
