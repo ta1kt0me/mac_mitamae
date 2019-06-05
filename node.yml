@@ -148,6 +148,7 @@ rbenv_default_gems:
 - gem-src
 ghq:
 - k0kubun/itamae-plugin-resource-ghq
+- ookamiinc/kinto
 - powerline/fonts
 - rails/rails
 - rupa/z
