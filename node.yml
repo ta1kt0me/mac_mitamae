@@ -30,10 +30,8 @@ homebrew_packages:
 - libyaml
 - mysql
 - terminal-notifier
-- terraform
 linuxbrew_packages:
 - hub
-- terraform
 apt_repositories:
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
@@ -102,6 +100,8 @@ git:
   dist: ".config/fish"
 - repo: "git@github.com:albertlauncher/python.git"
   dist: ".local/share/albert/org.albert.extension.python/modules"
+- repo: "git@github.com:tfutils/tfenv.git"
+  dist: ".tfenv"
 packages_with_option:
 - name: vim
   options: "--with-lua --with-python3 --with-ruby"
@@ -212,6 +212,13 @@ git_config:
   value: true
 - key: http.https://gopkg.in.followredirects
   value: true
+tfenv:
+  global:
+    0.11.14
+  versions:
+    - 0.11.14
+    - 0.10.8
+
 tig_config:
   set:
     - "main-view = id date author commit-title:graph=yes,refs=yes"
