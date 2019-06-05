@@ -71,6 +71,7 @@ apt_packages:
 - terminator
 - tilix
 - timeshift
+- translate-shell
 - ubuntu-restricted-extras
 - ukuu
 - vagrant
