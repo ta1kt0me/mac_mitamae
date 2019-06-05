@@ -1,5 +1,5 @@
 commands = [
-  { command: "ghq",  actual: ENV["HOME"] + "/src/bin/ghq" },
+  { command: "ghq",  actual: "#{ENV["HOME"]}/go/#{node[:goenv][:global]}/bin/ghq" },
   { command: "fish", actual: "/usr/bin/fish" },
 ]
 
