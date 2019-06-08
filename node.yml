@@ -35,7 +35,7 @@ linuxbrew_packages:
 apt_repositories:
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
-# - ppa:alexlarsson/flatpak
+- ppa:phoerious/keepassxc
 - ppa:nilarimogard/webupd8
 - ppa:teejee2008/ppa
 apt_packages:
