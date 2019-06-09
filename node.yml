@@ -67,6 +67,7 @@ apt_packages:
 - mupdf-tools
 - mysql-client
 - pkg-config
+- rkhunter
 - simple-scan
 - terminator
 - tilix
