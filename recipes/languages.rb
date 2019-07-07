@@ -117,6 +117,12 @@ node[:goenv][:global].tap do |version|
     not_if "test -e #{GOBIN}/dep"
   end
 
+  execute "Download sops" do
+    user node[:user]
+    command "#{ENV['HOME']}/.goenv/shims/go get -u go.mozilla.org/sops/cmd/sops"
+    not_if "test -e #{GOBIN}/sops"
+  end
+
   node[:go_packages].each do |package|
     execute "Install #{package}" do
       user node[:user]
