@@ -74,7 +74,6 @@ apt_packages:
 - timeshift
 - translate-shell
 - ubuntu-restricted-extras
-- ukuu
 - vagrant
 - vim-gnome
 - virtualbox
@@ -219,9 +218,9 @@ git_config:
   value: true
 tfenv:
   global:
-    0.11.14
+    0.12.6
   versions:
-    - 0.12.3
+    - 0.12.6
     - 0.11.14
     - 0.10.8
 
