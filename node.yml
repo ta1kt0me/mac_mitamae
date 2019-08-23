@@ -218,9 +218,9 @@ git_config:
   value: true
 tfenv:
   global:
-    0.12.6
+    0.12.7
   versions:
-    - 0.12.6
+    - 0.12.7
     - 0.11.14
     - 0.10.8
 
