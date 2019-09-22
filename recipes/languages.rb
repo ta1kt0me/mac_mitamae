@@ -22,6 +22,12 @@ execute "Create rbenv-default-gems file" do
   not_if "test -e #{DEFAULT_GEM_PATH}"
 end
 
+execute "Create gemrc-default-gems file" do
+  user node[:user]
+  command "echo 'gemsrc_use_ghq: true' >> #{ENV["HOME"]}/.gemrc"
+  not_if "test -n \"$(grep 'gemsrc_use_ghq' #{ENV["HOME"]}/.gemrc)\""
+end
+
 node[:rbenv_default_gems].each do |gem|
   execute "Set rbenv-default-gems to #{gem}" do
     user node[:user]
