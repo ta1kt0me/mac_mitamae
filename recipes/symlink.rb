@@ -1,6 +1,6 @@
 commands = [
-  { command: "ghq",  actual: "#{ENV["HOME"]}/go/#{node[:goenv][:global]}/bin/ghq" },
-  { command: "fish", actual: "/usr/bin/fish" },
+  { command: "ghq",  actual: "/home/#{node[:user]}/go/#{node[:goenv][:global]}/bin/ghq" },
+  { command: "fish", actual: "/usr/bin/fish" }
 ]
 
 commands.each do |command|

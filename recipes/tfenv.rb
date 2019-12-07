@@ -1,8 +1,10 @@
-tfenv = "#{ENV['HOME']}/.tfenv/bin/tfenv"
+home_path = "/home/" + node[:user]
+tfenv     = "#{home_path}/.tfenv/bin/tfenv"
+
 node[:tfenv][:versions].each do |version|
   execute "Install terraform #{version}" do
     user node[:user]
-    command "PATH=#{ENV['HOME']}/.tfenv/bin:$PATH #{tfenv} install #{version}"
+    command "PATH=#{home_path}/.tfenv/bin:$PATH #{tfenv} install #{version}"
     not_if "test $(#{tfenv} list | grep #{version})"
   end
 end
@@ -10,6 +12,6 @@ end
 node[:tfenv][:global].tap do |version|
   execute "Set tfenv global #{version}" do
     user node[:user]
-    command "PATH=#{ENV['HOME']}/.tfenv/bin:$PATH #{tfenv} use #{version}"
+    command "PATH=#{home_path}/.tfenv/bin:$PATH #{tfenv} use #{version}"
   end
 end

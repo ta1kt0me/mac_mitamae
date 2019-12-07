@@ -1,5 +1,6 @@
-dropbox_path = ENV["HOME"] + "/Dropbox"
-fish_path  = ENV["HOME"] + "/.config/fish"
+home_path    = "/home/" + node[:user]
+dropbox_path = home_path + "/Dropbox"
+fish_path    = home_path + "/.config/fish"
 
 links = [
   { from: fish_path + "/local.fish", to: dropbox_path + "/Public/fish/local.fish" }

@@ -1,3 +1,5 @@
+home_path = "/home/" + node[:user]
+
 # nodebrew
 execute "Install nodebrew" do
   user node[:user]
@@ -12,7 +14,7 @@ execute "Install nodejs" do
 end
 
 # rbenv
-RBENV_PATH = ENV["HOME"] + "/.rbenv"
+RBENV_PATH = home_path + "/.rbenv"
 DEFAULT_GEM_PATH = RBENV_PATH + "/default-gems"
 RBENV_EXE = RBENV_PATH + "/bin/rbenv"
 
@@ -24,8 +26,8 @@ end
 
 execute "Create gemrc-default-gems file" do
   user node[:user]
-  command "echo 'gemsrc_use_ghq: true' >> #{ENV["HOME"]}/.gemrc"
-  not_if "test -n \"$(grep 'gemsrc_use_ghq' #{ENV["HOME"]}/.gemrc)\""
+  command "echo 'gemsrc_use_ghq: true' >> #{home_path}/.gemrc"
+  not_if "test -n \"$(grep 'gemsrc_use_ghq' #{home_path}/.gemrc)\""
 end
 
 node[:rbenv_default_gems].each do |gem|
@@ -72,7 +74,7 @@ end
 # Required-by:
 
 # pyenv
-pyenv = "#{ENV["HOME"]}/.pyenv/bin/pyenv"
+pyenv = "#{home_path}/.pyenv/bin/pyenv"
 pyenv_option = 'env PYTHON_CONFIGURE_OPTS="--enable-shared"'
 node[:pyenv][:versions].each do |version|
   execute "Install python #{version}" do
@@ -91,7 +93,7 @@ node[:pyenv][:global].tap do |version|
 end
 
 # goenv
-goenv = "#{ENV["HOME"]}/.goenv/bin/goenv"
+goenv = "#{home_path}/.goenv/bin/goenv"
 node[:goenv][:versions].each do |version|
   execute "Install go #{version}" do
     user node[:user]
@@ -107,25 +109,25 @@ node[:goenv][:global].tap do |version|
     not_if "test $(#{goenv} version-name | grep #{version})"
   end
 
-  GOPATH = "/home/#{node[:user]}/go/#{version}".freeze
+  GOPATH = "#{home_path}/go/#{version}".freeze
   GOBIN = GOPATH + "/bin"
   ["go-get-release", "detect-latest-release"].each do |pkg|
     execute "Download #{pkg}" do
       user node[:user]
-      command "#{ENV['HOME']}/.goenv/shims/go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
+      command "#{home_path}/.goenv/shims/go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
       not_if "test -e #{GOBIN}/#{pkg}"
     end
   end
 
   execute "Download dep" do
     user node[:user]
-    command "#{ENV['HOME']}/.goenv/shims/go get -u github.com/golang/dep/cmd/dep"
+    command "#{home_path}/.goenv/shims/go get -u github.com/golang/dep/cmd/dep"
     not_if "test -e #{GOBIN}/dep"
   end
 
   execute "Download sops" do
     user node[:user]
-    command "#{ENV['HOME']}/.goenv/shims/go get -u go.mozilla.org/sops/cmd/sops"
+    command "#{home_path}/.goenv/shims/go get -u go.mozilla.org/sops/cmd/sops"
     not_if "test -e #{GOBIN}/sops"
   end
 
@@ -143,7 +145,7 @@ execute "Install rsvm" do
   command "curl -L https://raw.github.com/sdepold/rsvm/master/install.sh | sh"
 end
 
-RSVM_HOME = ENV["HOME"] + "/.rsvm"
+RSVM_HOME = home_path + "/.rsvm"
 execute "Link fish-config for rsvm" do
   user node[:user]
   command "ln -s #{RSVM_HOME}/rsvm.fish $HOME/.config/fish/functions"
@@ -153,7 +155,7 @@ end
 node[:rust][:versions].each do |version|
   execute "Install rust #{version}" do
     user node[:user]
-    cwd ENV["HOME"]
+    cwd home_path
     command ". #{RSVM_HOME}/rsvm.sh && rsvm install #{version}"
     not_if ". #{RSVM_HOME}/rsvm.sh && test -n \"$(rsvm ls | grep #{version})\""
   end

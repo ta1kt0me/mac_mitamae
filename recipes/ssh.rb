@@ -1,4 +1,4 @@
-ssh_local = ENV["HOME"] + "/.ssh_local"
+ssh_local = "/home/" + node[:user] + "/.ssh_local"
 known_hosts = "#{ssh_local}/known_hosts"
 
 execute "create #{known_hosts}" do

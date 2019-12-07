@@ -1,7 +1,7 @@
 links = [
   {
     from: "/usr/local/bin/docker-compose",
-    to:   "#{ENV['HOME']}/.pyenv/shims/docker-compose"
+    to: "/home/#{node[:user]}/.pyenv/shims/docker-compose"
   }
 ]
 

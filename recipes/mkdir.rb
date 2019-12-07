@@ -1,7 +1,8 @@
+home_path = "/home/" + node[:user]
 dirs = [
-  ENV["HOME"] + "/.vim",
-  ENV["HOME"] + "/.ghq",
-  ENV["HOME"] + "/.ssh_local"
+  home_path + "/.vim",
+  home_path + "/.ghq",
+  home_path + "/.ssh_local"
 ]
 
 dirs.each do |dir|
