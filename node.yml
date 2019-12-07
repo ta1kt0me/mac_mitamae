@@ -37,7 +37,7 @@ apt_repositories:
 - ppa:ubuntuhandbook1/apps
 - ppa:phoerious/keepassxc
 - ppa:nilarimogard/webupd8
-- ppa:teejee2008/ppa
+- ppa:peek-developers/stable
 apt_packages:
 - software-properties-common
 - albert
@@ -66,6 +66,7 @@ apt_packages:
 - mupdf
 - mupdf-tools
 - mysql-client
+- peek
 - pkg-config
 - rkhunter
 - simple-scan
