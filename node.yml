@@ -13,7 +13,6 @@ packages:
 - mycli
 - openssh-server
 - openssl
-- phantomjs
 - postgresql
 - python
 - rlwrap
@@ -35,7 +34,6 @@ linuxbrew_packages:
 apt_repositories:
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
-- ppa:phoerious/keepassxc
 - ppa:nilarimogard/webupd8
 - ppa:peek-developers/stable
 apt_packages:
@@ -70,7 +68,6 @@ apt_packages:
 - pkg-config
 - rkhunter
 - simple-scan
-- terminator
 - tilix
 - timeshift
 - translate-shell
@@ -146,9 +143,7 @@ rbenv_default_gems:
 - bundler
 - mgem
 - neovim
-- rfd
 - rubocop
-- rufo
 - scss_lint
 - gemdiff
 - gem-src
