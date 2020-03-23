@@ -36,7 +36,9 @@ apt_repositories:
 - ppa:ubuntuhandbook1/apps
 - ppa:nilarimogard/webupd8
 - ppa:peek-developers/stable
+- ppa:mmstick76/alacritty
 apt_packages:
+- alacritty
 - software-properties-common
 - albert
 - apt-transport-https
