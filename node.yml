@@ -32,6 +32,7 @@ homebrew_packages:
 linuxbrew_packages:
 - hub
 apt_repositories:
+- ppa:git-core/ppa
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
 - ppa:nilarimogard/webupd8
