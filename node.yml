@@ -14,7 +14,7 @@ packages:
 - openssh-server
 - openssl
 - postgresql
-- python
+- python-is-python3
 - rlwrap
 - tig
 - tmux
