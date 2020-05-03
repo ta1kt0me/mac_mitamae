@@ -47,6 +47,7 @@ apt_packages:
 - ca-certificates
 - chrome-gnome-shell
 - curl
+- docker.io
 - fcitx-mozc
 - flameshot
 - flatpak
