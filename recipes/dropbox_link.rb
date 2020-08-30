@@ -4,9 +4,9 @@ config_path  = home_path + "/.config"
 
 links = [
   { from: home_path + "/.tmux.conf",        to: dropbox_path + "/Public/tmux/.tmux.conf" },
-  { from: home_path + "/.gitignore_global", to: dropbox_path + "/share/dotfile/.gitignore_global" },
+  { from: home_path + "/.gitignore_global", to: dropbox_path + "/Dev/dotfile/.gitignore_global" },
   { from: home_path + "/.rubocop.yml",      to: dropbox_path + "/Public/rubocop/.rubocop.yml" },
-  { from: home_path + "/.rufo",             to: dropbox_path + "/share/dotfile/.rufo" },
+  { from: home_path + "/.rufo",             to: dropbox_path + "/Dev/dotfile/.rufo" },
   { from: home_path + "/.sheets",           to: dropbox_path + "/Public/sheet/.sheets" },
   { from: home_path + "/.ssh",              to: dropbox_path + "/Dev/ssh" },
   { from: home_path + "/.essh",             to: dropbox_path + "/Dev/essh" },
