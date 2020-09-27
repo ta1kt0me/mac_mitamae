@@ -6,12 +6,6 @@ if node[:platform] == "darwin"
   node[:homebrew_packages].each do |item|
     package item
   end
-
-  node[:packages_with_option].each do |item|
-    package item[:name] do
-      options item[:options]
-    end
-  end
 end
 
 if node[:platform] == "ubuntu"

@@ -26,6 +26,7 @@ homebrew_packages:
 - libyaml
 - mysql
 - terminal-notifier
+- vim
 linuxbrew_packages:
 - hub
 apt_repositories:
@@ -110,9 +111,6 @@ git:
   dist: ".local/share/albert/org.albert.extension.python/modules"
 - repo: "git@github.com:tfutils/tfenv.git"
   dist: ".tfenv"
-packages_with_option:
-- name: vim
-  options: "--with-lua --with-python3 --with-ruby"
 nodejs:
   version: v10.18.0
 rbenv:
