@@ -2,7 +2,6 @@
 user: toku
 packages:
 - cmake
-- copyq
 - fish
 - fontconfig
 - gauche
@@ -11,10 +10,8 @@ packages:
 - jo
 - jq
 - mycli
-- openssh-server
 - openssl
 - postgresql
-- python-is-python3
 - rlwrap
 - tig
 - tmux
@@ -46,6 +43,7 @@ apt_packages:
 - arp-scan
 - ca-certificates
 - chrome-gnome-shell
+- copyq
 - curl
 - docker.io
 - fcitx-mozc
@@ -68,8 +66,10 @@ apt_packages:
 - mupdf
 - mupdf-tools
 - mysql-client
+- openssh-server
 - peek
 - pkg-config
+- python-is-python3
 - rkhunter
 - simple-scan
 - tilix
