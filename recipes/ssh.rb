@@ -1,4 +1,8 @@
-ssh_local = "/home/" + node[:user] + "/.ssh_local"
+def home_dir
+  node[:platform] == "darwin" ? "/Users" : "/home"
+end
+
+ssh_local = "#{home_dir}/" + node[:user] + "/.ssh_local"
 known_hosts = "#{ssh_local}/known_hosts"
 
 execute "create #{known_hosts}" do

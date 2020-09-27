@@ -1,5 +1,9 @@
+def home_dir
+  node[:platform] == "darwin" ? "/Users" : "/home"
+end
+
 commands = [
-  { command: "ghq",  actual: "/home/#{node[:user]}/go/#{node[:goenv][:global]}/bin/ghq" },
+  { command: "ghq",  actual: "#{home_dir}/#{node[:user]}/go/#{node[:goenv][:global]}/bin/ghq" },
   { command: "fish", actual: "/usr/bin/fish" }
 ]
 

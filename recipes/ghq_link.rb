@@ -1,4 +1,8 @@
-home_path   = "/home/" + node[:user]
+def home_dir
+  node[:platform] == "darwin" ? "/Users" : "/home"
+end
+
+home_path   = "#{home_dir}/" + node[:user]
 config_path = home_path + "/.config"
 ghq_path    = `sudo su - #{node[:user]} -c "git config --get ghq.root"`.gsub("\n", "")
 

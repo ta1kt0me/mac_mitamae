@@ -1,4 +1,8 @@
-home_path = "/home/" + node[:user]
+def home_dir
+  node[:platform] == "darwin" ? "/Users" : "/home"
+end
+
+home_path = "#{home_dir}/" + node[:user]
 tfenv     = "#{home_path}/.tfenv/bin/tfenv"
 
 node[:tfenv][:versions].each do |version|

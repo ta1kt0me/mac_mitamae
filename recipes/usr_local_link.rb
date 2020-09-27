@@ -1,7 +1,11 @@
+def home_dir
+  node[:platform] == "darwin" ? "/Users" : "/home"
+end
+
 links = [
   {
     from: "/usr/local/bin/docker-compose",
-    to: "/home/#{node[:user]}/.pyenv/shims/docker-compose"
+    to: "#{home_dir}/#{node[:user]}/.pyenv/shims/docker-compose"
   }
 ]
 
