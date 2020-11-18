@@ -115,10 +115,10 @@ nodejs:
   version: v10.18.0
 rbenv:
   global:
-    2.7.1
+    2.7.2
   versions:
-    - 2.6.3
-    - 2.7.1
+    - 2.6.6
+    - 2.7.2
 pyenv:
   global:
     3.7.9
