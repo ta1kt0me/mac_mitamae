@@ -92,6 +92,7 @@ go_packages:
 rust_packages:
 - bat
 - mdcat
+- pueue
 - ripgrep
 git:
 - repo: "git@github.com:syndbg/goenv.git"
