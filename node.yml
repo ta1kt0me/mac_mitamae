@@ -112,13 +112,14 @@ git:
 - repo: "git@github.com:tfutils/tfenv.git"
   dist: ".tfenv"
 nodejs:
-  version: v10.18.0
+  version: v12.18.4
 rbenv:
   global:
     2.7.2
   versions:
     - 2.6.6
     - 2.7.2
+    - 3.0.0
 pyenv:
   global:
     3.7.9
