@@ -18,5 +18,6 @@ links.each do |link|
   link link[:from] do
     user node[:user]
     to link[:to]
+    not_if "test -e #{link[:from]}"
   end
 end
