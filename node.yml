@@ -29,6 +29,7 @@ homebrew_packages:
 - terminal-notifier
 - vim
 linuxbrew_packages:
+- awscli
 - hub
 apt_repositories:
 - ppa:git-core/ppa
