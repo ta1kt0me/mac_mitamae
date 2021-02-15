@@ -4,7 +4,9 @@ end
 
 home_path   = "#{home_dir}/" + node[:user]
 config_path = home_path + "/.config"
-ghq_path    = `sudo su - #{node[:user]} -c "git config --get ghq.root"`.gsub("\n", "")
+ghq_path    = `git config --get ghq.root`.gsub("\n", "")
+
+raise 'First, set ghq.root in git config' if ghq_path.empty?
 
 links = [
   { from: home_path   + "/.vimrc",            to: ghq_path + "/github.com/ta1kt0me/vimrc/.vimrc" },
