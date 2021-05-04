@@ -137,9 +137,10 @@ pyenv:
     - 3.7.9
 rust:
   global:
-    1.46.0
+    1.51.0
   versions:
     - 1.46.0
+    - 1.51.0
 goenv:
   global:
     1.14.9
