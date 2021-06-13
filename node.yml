@@ -20,17 +20,12 @@ packages:
 - zsh
 - graphviz
 homebrew_packages:
-- awscli
 - gnu-sed
-- hub
 - libffi
 - libyaml
 - mysql
 - terminal-notifier
 - vim
-linuxbrew_packages:
-- awscli
-- hub
 apt_repositories:
 - ppa:git-core/ppa
 - ppa:jonathonf/vim
@@ -38,6 +33,17 @@ apt_repositories:
 - ppa:nilarimogard/webupd8
 - ppa:peek-developers/stable
 - ppa:mmstick76/alacritty
+asdf_packages:
+- name: awscli
+  version: latest
+- name: hub
+  version: v2.14.2
+- name: yq
+  version: latest
+asdf_with_url_packages:
+- name: aws-vault
+  version: latest
+  url: https://github.com/beardix/asdf-aws-vault.git
 apt_packages:
 - alacritty
 - software-properties-common
@@ -150,6 +156,7 @@ rbenv_default_gems:
 - gemdiff
 - gem-src
 ghq:
+- asdf-vm/asdf
 - k0kubun/itamae-plugin-resource-ghq
 - ookamiinc/kinto
 - powerline/fonts
