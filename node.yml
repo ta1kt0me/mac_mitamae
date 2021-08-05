@@ -54,7 +54,7 @@ apt_packages:
 - chrome-gnome-shell
 - copyq
 - curl
-- docker.io
+# - docker.io
 - fcitx-mozc
 - flameshot
 - flatpak
@@ -171,7 +171,7 @@ pip:
 - ansible
 - boto
 - httpie
-- docker-compose
+# - docker-compose
 - neovim
 - powerline-status
 - pynvim
