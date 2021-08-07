@@ -125,30 +125,29 @@ nodejs:
   version: v12.18.4
 rbenv:
   global:
-    2.7.2
+    3.0.2
   versions:
-    - 2.6.6
-    - 2.7.2
-    - 3.0.0
+    - 2.6.8
+    - 2.7.4
+    - 3.0.2
 pyenv:
   global:
-    3.7.9
+    3.7.11
   versions:
-    - 3.6.12
-    - 3.7.9
+    - 3.7.11
+    - 3.9.6
 rust:
   global:
-    1.51.0
+    1.54.0
   versions:
-    - 1.46.0
     - 1.51.0
+    - 1.54.0
 goenv:
   global:
-    1.14.9
+    1.14.15
   versions:
-    - 1.12.5
-    - 1.13.15
-    - 1.14.9
+    - 1.14.15
+    - 1.16.6
 rbenv_default_gems:
 - bundler
 - mgem
