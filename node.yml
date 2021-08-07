@@ -156,6 +156,7 @@ rbenv_default_gems:
 - scss_lint
 - gemdiff
 - gem-src
+- solargraph
 ghq:
 - asdf-vm/asdf
 - k0kubun/itamae-plugin-resource-ghq
