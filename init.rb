@@ -16,7 +16,7 @@ include_recipe "./recipes/nodebrew.rb"
 include_recipe "./recipes/rbenv.rb"
 include_recipe "./recipes/pyenv.rb"
 include_recipe "./recipes/goenv.rb"
-include_recipe "./recipes/rsvm.rb"
+include_recipe "./recipes/rustup.rb"
 
 include_recipe "./recipes/symlink.rb" if node[:platform] == "ubuntu"
 include_recipe "./recipes/ghq.rb"

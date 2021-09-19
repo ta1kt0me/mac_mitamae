@@ -99,6 +99,7 @@ go_packages:
 - sonots/lltsv
 rust_packages:
 - bat
+- cargo-update
 - mdcat
 - pueue
 - ripgrep
@@ -140,8 +141,8 @@ rust:
   global:
     1.54.0
   versions:
-    - 1.51.0
     - 1.54.0
+    - 1.55.0
 goenv:
   global:
     1.14.15
