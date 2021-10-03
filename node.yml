@@ -230,12 +230,11 @@ git_config:
   value: true
 tfenv:
   global:
-    0.12.30
+    1.0.4
   versions:
+    - 1.0.4
     - 0.14.6
     - 0.13.6
-    - 0.12.30
-    - 0.11.14
 
 tig_config:
   set:
