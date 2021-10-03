@@ -8,8 +8,8 @@ commands = [
 ]
 
 commands.each do |command|
-  execute "Create #{command[:command]} symlink" do
-    command "ln -s #{command[:actual]} /usr/local/bin/#{command[:command]}"
-    not_if "test -L /usr/local/bin/#{command[:command]}"
+  link "/usr/local/bin/#{command[:command]}" do
+    to command[:actual]
+    force true
   end
 end
