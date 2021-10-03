@@ -161,7 +161,6 @@ rbenv_default_gems:
 - solargraph
 ghq:
 - asdf-vm/asdf
-- k0kubun/itamae-plugin-resource-ghq
 - ookamiinc/kinto
 - powerline/fonts
 - rails/rails
