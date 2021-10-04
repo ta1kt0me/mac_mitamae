@@ -1,7 +1,6 @@
-def home_dir
-  node[:platform] == "darwin" ? "/Users" : "/home"
-end
+include_recipe 'directory_helper'
 
+home_dir = DirectoryHelper.home(node)
 ssh_local = "#{home_dir}/" + node[:user] + "/.ssh_local"
 known_hosts = "#{ssh_local}/known_hosts"
 

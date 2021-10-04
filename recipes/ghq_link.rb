@@ -1,7 +1,6 @@
-def home_dir
-  node[:platform] == "darwin" ? "/Users" : "/home"
-end
+include_recipe 'directory_helper'
 
+home_dir = DirectoryHelper.home(node)
 home_path   = "#{home_dir}/" + node[:user]
 config_path = home_path + "/.config"
 ghq_path    = `git config --get ghq.root`.gsub("\n", "")
