@@ -24,6 +24,7 @@ homebrew_packages:
 - libffi
 - libyaml
 - mysql
+- openjdk
 - terminal-notifier
 - vim
 apt_repositories:
