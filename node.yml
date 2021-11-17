@@ -123,7 +123,7 @@ git:
 - repo: "git@github.com:tfutils/tfenv.git"
   dist: ".tfenv"
 nodejs:
-  version: v12.18.4
+  version: v16.13.0
 rbenv:
   global:
     3.0.2
@@ -133,16 +133,16 @@ rbenv:
     - 3.0.2
 pyenv:
   global:
-    3.7.11
+    3.9.6
   versions:
     - 3.7.11
     - 3.9.6
 rust:
   global:
-    1.54.0
+    1.56.0
   versions:
-    - 1.54.0
     - 1.55.0
+    - 1.56.0
 goenv:
   global:
     1.16.8
@@ -233,8 +233,7 @@ tfenv:
     1.0.4
   versions:
     - 1.0.4
-    - 0.14.6
-    - 0.13.6
+    - 1.0.10
 
 tig_config:
   set:
