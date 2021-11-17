@@ -90,12 +90,11 @@ apt_packages:
 - vim-gnome
 - virtualbox
 - zlib1g-dev
-go_packages:
-- bcicen/ctop
-- direnv/direnv
-- kohkimakimoto/essh
-- motemen/ghq
+go_packages_by_release:
 - peco/peco
+go_packages:
+- direnv/direnv
+- x-motemen/ghq
 - sonots/lltsv
 rust_packages:
 - bat
