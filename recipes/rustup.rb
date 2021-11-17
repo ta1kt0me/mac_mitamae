@@ -28,7 +28,7 @@ end
 node[:rust_packages].each do |package|
   execute "Install rust package: #{package}" do
     user node[:user]
-    command "#{set_cargo_bin_to_path} cargo install #{package}"
+    command "#{set_cargo_bin_to_path} cargo install --locked #{package}"
   end
 end
 
