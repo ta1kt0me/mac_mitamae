@@ -48,7 +48,7 @@ node[:goenv][:global].tap do |version|
   node[:go_packages].each do |package|
     execute "Install #{package} by go install" do
       user node[:user]
-      command "GOPATH=#{GOPATH} go install github.com/#{package}@latest"
+      command "GOPATH=#{GOPATH} #{home_path}/.goenv/shims/go install github.com/#{package}@latest"
     end
   end
 
