@@ -95,8 +95,10 @@ go_packages_by_release:
 - peco/peco
 go_packages:
 - direnv/direnv
-- x-motemen/ghq
 - sonots/lltsv
+- x-motemen/ghq
+- yusukebe/rj/cmd/rj
+- yusukebe/t/cmd/t
 rust_packages:
 - bat
 - cargo-update
