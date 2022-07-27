@@ -192,7 +192,7 @@ git_config:
 - key: user.name
   value: ta1kt0me
 - key: user.email
-  value: p.wadachi@gmail.com
+  value: 1412864+ta1kt0me@users.noreply.github.com
 - key: color.ui
   value: auto
 - key: alias.co
