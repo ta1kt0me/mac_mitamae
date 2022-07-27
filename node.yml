@@ -25,7 +25,6 @@ homebrew_packages:
 - libyaml
 - mysql
 - openjdk
-- terminal-notifier
 - vim
 apt_repositories:
 - ppa:git-core/ppa
