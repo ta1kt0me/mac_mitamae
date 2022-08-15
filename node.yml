@@ -30,9 +30,9 @@ apt_repositories:
 - ppa:git-core/ppa
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
-- ppa:nilarimogard/webupd8
+# - ppa:nilarimogard/webupd8
 - ppa:peek-developers/stable
-- ppa:mmstick76/alacritty
+- ppa:aslatter/ppa
 asdf_packages:
 - name: awscli
   version: latest
@@ -62,7 +62,6 @@ apt_packages:
 - gnome-screensaver
 - gnome-shell-extensions
 - gnome-software-plugin-flatpak
-- gnome-tweak-tool
 - gnome-tweaks
 - gnome-weather
 - hplip-gui
