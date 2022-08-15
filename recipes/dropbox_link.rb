@@ -20,7 +20,8 @@ links = [
   { from: home_path + "/.vim/ftplugin",     to: dropbox_path + "/Public/vim/.vim/ftplugin" },
   { from: home_path + "/vimwiki",           to: dropbox_path + "/Public/vim/vimwiki" },
   { from: config_path + "/powerline",       to: dropbox_path + "/Public/powerline" },
-  { from: config_path + "/peco",            to: dropbox_path + "/Public/peco" }
+  { from: config_path + "/peco",            to: dropbox_path + "/Public/peco" },
+  { from: config_path + "/wezterm",         to: dropbox_path + "/Dev/wezterm" }
 ]
 
 links.each do |link|
