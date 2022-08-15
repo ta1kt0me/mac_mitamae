@@ -218,6 +218,8 @@ git_config:
   value: "! git fetch && git rebase -i origin/master"
 - key: alias.release-tag
   value: '! git tag RELEASE_\$(date +%Y%m%d_%H%M) && git tag | tail -1'
+- key: alias.wip
+  value: "commit -m 'tmp' --no-verify"
 - key: ghq.root
   value: $HOME/src/src
 - key: grep.lineNumber
