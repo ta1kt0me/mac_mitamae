@@ -30,8 +30,6 @@ apt_repositories:
 - ppa:git-core/ppa
 - ppa:jonathonf/vim
 - ppa:ubuntuhandbook1/apps
-# - ppa:nilarimogard/webupd8
-- ppa:peek-developers/stable
 - ppa:aslatter/ppa
 asdf_packages:
 - name: awscli
