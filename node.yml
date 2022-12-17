@@ -137,15 +137,14 @@ pyenv:
     - 3.9.6
 rust:
   global:
-    1.62.1
+    1.65.0
   versions:
-    - 1.58.1
     - 1.62.1
+    - 1.65.0
 goenv:
   global:
     1.17.1
   versions:
-    - 1.14.15
     - 1.16.8
     - 1.17.1
 rbenv_default_gems:
