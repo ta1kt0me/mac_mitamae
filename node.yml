@@ -34,6 +34,8 @@ apt_repositories:
 asdf_packages:
 - name: awscli
   version: latest
+- name: github-cli
+  version: latest
 - name: hub
   version: v2.14.2
 - name: yq
