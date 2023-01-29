@@ -197,7 +197,7 @@ git_config:
 - key: alias.ci
   value: commit
 - key: alias.pushf
-  value: "push --force-with-lease"
+  value: "push --force-with-lease --force-if-includes"
 - key: alias.bcleanup
   value: "! git branch --merged master | grep -v '^* master$' | xargs git branch -d"
 - key: alias.bbetween
