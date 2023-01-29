@@ -159,6 +159,7 @@ rbenv_default_gems:
 - gem-src
 - solargraph
 - debug
+- ruby-lsp
 ghq:
 - asdf-vm/asdf
 - ookamiinc/kinto
