@@ -207,6 +207,8 @@ git_config:
   value: "! f() { git log --format=format:%d \\$(git show-branch --sha1-name \\$1 HEAD | tail -1 | cut -d ' ' -f 2 | gsed -e 's/\\(\\[\\|\\]\\)//g')..HEAD | grep -v '^\\s*$'; }; f"
 - key: alias.files
   value: "ls-files"
+- key: alias.branches
+  value: "! git for-each-ref --sort='-committerdate:iso8601' --format=' %(committerdate:iso8601)%09%(refname)' refs/heads"
 - key: alias.rewrite
   value: "commit --am"
 - key: alias.conf
