@@ -16,7 +16,7 @@ end
 node[:goenv][:global].tap do |version|
   execute "Set goenv global #{version}" do
     user node[:user]
-    command "#{goenv} global #{version}"
+    command "#{goenv} global #{version} && goenv rehash"
     not_if "test $(#{goenv} version-name | grep #{version})"
   end
 
@@ -32,7 +32,7 @@ node[:goenv][:global].tap do |version|
   ["go-get-release", "detect-latest-release"].each do |pkg|
     execute "Download #{pkg}" do
       user node[:user]
-      command "#{home_path}/.goenv/shims/go get -u github.com/rhysd/go-github-selfupdate/cmd/#{pkg}"
+      command "GOPATH=#{GOPATH} #{home_path}/.goenv/shims/go install github.com/rhysd/go-github-selfupdate/cmd/#{pkg}@latest"
       cwd "#{home_path}/.gotools"
       not_if "test -e #{GOBIN}/#{pkg}"
     end
