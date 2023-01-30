@@ -27,7 +27,12 @@ node[:asdf_packages].each do |package|
   execute "install plugin command #{package[:name]}" do
     user node[:user]
     command "#{asdf_command} install #{package[:name]} #{package[:version]}"
-    not_if "~/.asdf/bin/asdf list #{package[:name]} | grep -v 'No versions installed'"
+    not_if "~/.asdf/bin/asdf list #{package[:name]} | grep #{package[:version]}"
+  end
+
+  execute "update plugin command #{package[:name]}" do
+    user node[:user]
+    command "#{asdf_command} plugin update #{package[:name]} #{package[:version]} && #{asdf_command} global #{package[:name]} #{package[:version]}"
   end
 end
 
