@@ -98,6 +98,7 @@ go_packages:
 - yusukebe/rj/cmd/rj
 - yusukebe/t/cmd/t
 rust_packages:
+- aichat
 - bat
 - cargo-update
 - mdcat
@@ -140,10 +141,10 @@ pyenv:
     - 3.9.6
 rust:
   global:
-    1.65.0
+    1.67.0
   versions:
-    - 1.62.1
     - 1.65.0
+    - 1.67.0
 goenv:
   global:
     1.19.5
