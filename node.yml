@@ -94,6 +94,7 @@ rust_packages:
 - bat
 - cargo-update
 - mdcat
+- mise
 - ripgrep
 git:
 - repo: "git@github.com:syndbg/goenv.git"
