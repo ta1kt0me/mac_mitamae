@@ -10,7 +10,8 @@ arch=$(uname -p)
 
 if [[ "$os" = "Linux" ]]; then
   # --log-level=debug
-  sudo $bin_dir/mitamae-x86_64-linux local -y node.yml --shell=/bin/bash init.rb
+  sudo $bin_dir/mitamae-x86_64-linux local -y node.yml --shell=/bin/bash recipes/apt_packages.rb
+  $bin_dir/mitamae-x86_64-linux local -y node.yml --shell=/bin/bash init.rb
 else
   if [[ "$arch" = "arm" ]]; then
     $bin_dir/mitamae-aarch64-darwin local -y node.yml init.rb

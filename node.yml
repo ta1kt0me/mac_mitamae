@@ -28,8 +28,6 @@ homebrew_packages:
 - vim
 apt_repositories:
 - ppa:git-core/ppa
-- ppa:jonathonf/vim
-- ppa:ubuntuhandbook1/apps
 - ppa:aslatter/ppa
 asdf_packages:
 - name: awscli
@@ -45,17 +43,17 @@ asdf_with_url_packages:
   version: latest
   url: https://github.com/beardix/asdf-aws-vault.git
 apt_packages:
-- alacritty
 - software-properties-common
-- albert
 - apt-transport-https
 - arp-scan
 - ca-certificates
 - chrome-gnome-shell
+- code
 - copyq
 - curl
 # - docker.io
-- fcitx-mozc
+- fcitx5
+- fcitx5-mozc
 - flameshot
 - flatpak
 - fzf
@@ -81,19 +79,13 @@ apt_packages:
 - python-is-python3
 - rkhunter
 - simple-scan
-- tilix
 - timeshift
 - translate-shell
-- ubuntu-restricted-extras
-- vagrant
-- vim-gnome
-- virtualbox
 - zlib1g-dev
 go_packages_by_release:
 - peco/peco
 go_packages:
 - direnv/direnv
-- sonots/lltsv
 - x-motemen/ghq
 - yusukebe/rj/cmd/rj
 - yusukebe/t/cmd/t
@@ -102,7 +94,6 @@ rust_packages:
 - bat
 - cargo-update
 - mdcat
-- pueue
 - ripgrep
 git:
 - repo: "git@github.com:syndbg/goenv.git"
@@ -124,10 +115,10 @@ git:
 - repo: "git@github.com:tfutils/tfenv.git"
   dist: ".tfenv"
 nodejs:
-  version: v16.13.0
+  version: v18.12.0
 rbenv:
   global:
-    3.1.3
+    3.2.0
   versions:
     - 3.1.3
     - 3.2.0
@@ -180,10 +171,7 @@ pip:
 - powerline-status
 - pynvim
 npm:
-- gtop
-- heroku
 - ndb
-- puppeteer
 - yarn
 git_config:
 - key: core.editor
@@ -225,7 +213,7 @@ git_config:
 - key: alias.wip
   value: '! git commit -m "wip"'
 - key: ghq.root
-  value: $HOME/src/src
+  value: $HOME/src
 - key: grep.lineNumber
   value: true
 - key: push.default

@@ -7,9 +7,3 @@ if node[:platform] == "darwin"
     package item
   end
 end
-
-if node[:platform] == "ubuntu"
-  node[:apt_packages].each do |item|
-    package item
-  end
-end
