@@ -37,16 +37,16 @@ node[:asdf_packages].each do |package|
 end
 
 # NOT supported https://github.com/asdf-vm/asdf-plugins
-node[:asdf_with_url_packages].each do |package|
-  execute "add plugin #{package[:name]} with url" do
-    user node[:user]
-    command "#{asdf_command} plugin add #{package[:name]} #{package[:url]}"
-    not_if "~/.asdf/bin/asdf plugin list | grep -E '^#{package[:name]}$'"
-  end
-
-  execute "install external plugin command #{package[:name]}" do
-    user node[:user]
-    command "#{asdf_command} install #{package[:name]} #{package[:version]}"
-    not_if "~/.asdf/bin/asdf list #{package[:name]} | grep -v 'No versions installed'"
-  end
-end
+# node[:asdf_with_url_packages].each do |package|
+#   execute "add plugin #{package[:name]} with url" do
+#     user node[:user]
+#     command "#{asdf_command} plugin add #{package[:name]} #{package[:url]}"
+#     not_if "~/.asdf/bin/asdf plugin list | grep -E '^#{package[:name]}$'"
+#   end
+#
+#   execute "install external plugin command #{package[:name]}" do
+#     user node[:user]
+#     command "#{asdf_command} install #{package[:name]} #{package[:version]}"
+#     not_if "~/.asdf/bin/asdf list #{package[:name]} | grep -v 'No versions installed'"
+#   end
+# end
