@@ -115,6 +115,17 @@ git:
   dist: ".local/share/albert/org.albert.extension.python/modules"
 - repo: "git@github.com:tfutils/tfenv.git"
   dist: ".tfenv"
+mise:
+  node:
+    use: 20
+    versions:
+      - 20.11.1
+      - 18.12.0
+  ruby:
+    use: 3.2.3
+    versions:
+      - 3.2.3
+      - 3.1.4
 nodejs:
   version: v18.12.0
 rbenv:

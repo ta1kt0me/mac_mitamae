@@ -12,6 +12,7 @@ include_recipe "./recipes/add_apt_repository.rb" if node[:platform] == "pop"
 include_recipe "./recipes/homebrew.rb" if node[:platform] == "darwin"
 include_recipe "./recipes/linuxbrew.rb" if node[:platform] == "pop"
 include_recipe "./recipes/packages.rb"
+include_recipe "./recipes/mise.rb"
 
 # language
 include_recipe "./recipes/rustup.rb"
