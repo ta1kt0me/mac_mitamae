@@ -116,10 +116,10 @@ mise:
       - 20.11.1
       - 18.12.0
   ruby:
-    use: 3.2.3
+    use: 3.3.2
     versions:
+      - 3.3.2
       - 3.2.3
-      - 3.1.4
 nodejs:
   version: v18.12.0
 rbenv:
@@ -135,10 +135,11 @@ pyenv:
     - 3.9.6
 rust:
   global:
-    1.76.0
+    1.85.0
   versions:
-    - 1.76.0
     - 1.67.0
+    - 1.76.0
+    - 1.85.0
 goenv:
   global:
     1.19.5
