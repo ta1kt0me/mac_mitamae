@@ -1,5 +1,9 @@
 class Specinfra::Command::Pop < Specinfra::Command::Ubuntu; end
 
+include_recipe "./recipes/homebrew.rb"
+# TODO: check linux
+# include_recipe "./recipes/linuxbrew.rb" if node[:platform] == "pop"
+include_recipe "./recipes/mac_packages.rb" if node[:platform] == "darwin"
 include_recipe "./recipes/git_config.rb"
 include_recipe "./recipes/tig_config.rb"
 include_recipe "./recipes/mkdir.rb"
@@ -9,9 +13,7 @@ include_recipe "./recipes/dropbox_link.rb"
 include_recipe "./recipes/git.rb"
 include_recipe "./recipes/fish_link.rb"
 include_recipe "./recipes/add_apt_repository.rb" if node[:platform] == "pop"
-include_recipe "./recipes/homebrew.rb" if node[:platform] == "darwin"
-include_recipe "./recipes/linuxbrew.rb" if node[:platform] == "pop"
-include_recipe "./recipes/packages.rb"
+include_recipe "./recipes/packages.rb" if node[:platform] == "pop"
 include_recipe "./recipes/mise.rb"
 
 # language
