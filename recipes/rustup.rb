@@ -32,7 +32,7 @@ node[:rust_packages].each do |package|
   end
 end
 
-execute "Update rust packages" do
-  user node[:user]
-  command "#{set_cargo_bin_to_path} cargo install-update --all"
-end
+# execute "Update rust packages" do
+#   user node[:user]
+#   command "#{set_cargo_bin_to_path} cargo install-update --all"
+# end
