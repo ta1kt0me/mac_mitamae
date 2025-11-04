@@ -79,9 +79,9 @@ apt_packages:
 - translate-shell
 - zlib1g-dev
 go_packages_by_release:
-- peco/peco
+# - peco/peco
 go_packages:
-- direnv/direnv
+# - direnv/direnv
 # - x-motemen/ghq
 - yusukebe/rj/cmd/rj
 - yusukebe/t/cmd/t
@@ -123,7 +123,9 @@ mise:
   - go@1.19.5
   - terraform@1.0.4
   - terraform@1.0.10
+  - direnv@latest
   - gh@latest
+  - peco@latest
   plugins:
   - awscli
   - hub

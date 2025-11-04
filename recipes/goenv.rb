@@ -45,10 +45,10 @@ node[:goenv][:global].tap do |version|
     end
   end
 
-  node[:go_packages_by_release].each do |package|
-    execute "Install #{package} by go-get-release" do
-      user node[:user]
-      command "GOPATH=#{GOPATH} #{GOBIN}/go-get-release github.com/#{package}"
-    end
-  end
+  # node[:go_packages_by_release].each do |package|
+  #   execute "Install #{package} by go-get-release" do
+  #     user node[:user]
+  #     command "GOPATH=#{GOPATH} #{GOBIN}/go-get-release github.com/#{package}"
+  #   end
+  # end
 end
