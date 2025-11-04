@@ -110,16 +110,24 @@ git:
 - repo: "git@github.com:tfutils/tfenv.git"
   dist: ".tfenv"
 mise:
-  node:
-    use: 20
-    versions:
-      - 20.11.1
-      - 18.12.0
-  ruby:
-    use: 3.3.2
-    versions:
-      - 3.3.2
-      - 3.2.3
+  packages:
+  - node@20.19.5
+  - node@18.12.0
+  - ruby@3.3.10
+  - ruby@3.3.2
+  - ruby@3.2.3
+  - python@3.9.6
+  - python@3.10.19
+  - rust@1.76.0
+  - rust@1.85.0
+  - go@1.19.5
+  - terraform@1.0.4
+  - terraform@1.0.10
+  - gh@latest
+  plugins:
+  - awscli
+  - hub
+  - yq
 nodejs:
   version: v18.12.0
 rbenv:
