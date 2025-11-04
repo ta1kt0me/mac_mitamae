@@ -20,9 +20,11 @@ packages:
 - zsh
 - graphviz
 homebrew_packages:
+- btop
 - gnu-sed
 - libffi
 - libyaml
+- mcp-toolbox
 - mysql@8.0
 - openjdk
 - vim
@@ -90,6 +92,8 @@ rust_packages:
 # - cargo-update
 # - mise
 - ripgrep
+gh_repos:
+- apstndb/spanner-mycli
 git:
 - repo: "git@github.com:syndbg/goenv.git"
   dist: ".goenv"
@@ -111,24 +115,29 @@ git:
   dist: ".tfenv"
 mise:
   packages:
-  - node@20.19.5
+  - go@1.19.5
   - node@18.12.0
+  - node@20.19.5
+  - python@3.10.19
+  - python@3.9.6
+  - ruby@3.2.3
   - ruby@3.3.10
   - ruby@3.3.2
-  - ruby@3.2.3
-  - python@3.9.6
-  - python@3.10.19
   - rust@1.76.0
   - rust@1.85.0
-  - go@1.19.5
-  - terraform@1.0.4
   - terraform@1.0.10
+  - terraform@1.0.4
   - direnv@latest
   - gh@latest
   - peco@latest
   plugins:
   - awscli
+  - bat
+  - gcloud
+  - ghq
   - hub
+  - lazygit
+  - ripgrep
   - yq
 nodejs:
   version: v18.12.0
