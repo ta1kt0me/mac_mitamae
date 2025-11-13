@@ -201,7 +201,6 @@ pip:
 - powerline-status
 - pynvim
 npm:
-- ndb
 - yarn
 git_config:
 - key: core.editor
