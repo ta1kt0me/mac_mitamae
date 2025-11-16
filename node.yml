@@ -195,10 +195,8 @@ ghq:
 - ta1kt0me/mac_mitamae
 - yochiyochirb/vimrc
 pip:
-- ansible
 - boto
 - httpie
-# - docker-compose
 - neovim
 - powerline-status
 - pynvim
