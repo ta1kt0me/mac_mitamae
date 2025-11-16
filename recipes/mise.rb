@@ -11,7 +11,12 @@ node[:mise][:packages].each do |package|
   execute "Install #{package} via mise" do
     user node[:user]
     command "#{HOME_DIR}/.local/bin/mise install #{package}"
-    only_if "test -z $(#{HOME_DIR}/.local/bin/mise ls #{package.split("@").first} | grep #{package.split("@").last})"
+    only_if "test -z $(#{HOME_DIR}/.local/bin/mise ls #{package.split('@').first} | grep #{package.split('@').last})"
+  end
+
+  execute "Activate #{package} via mise" do
+    user node[:user]
+    command "#{HOME_DIR}/.local/bin/mise use --global #{package}"
   end
 end
 
@@ -25,5 +30,10 @@ node[:mise][:plugins].each do |plugin|
   execute "Update #{plugin} via mise" do
     user node[:user]
     command "#{HOME_DIR}/.local/bin/mise plugins update #{plugin}"
+  end
+
+  execute "Activate #{plugin} via mise" do
+    user node[:user]
+    command "#{HOME_DIR}/.local/bin/mise use --global #{plugin}@latest"
   end
 end
