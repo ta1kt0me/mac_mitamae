@@ -124,6 +124,7 @@ mise:
   - ruby@3.2.3
   - ruby@3.3.2
   - ruby@3.3.10
+  - ruby@3.4.7
   - rust@1.76.0
   - rust@1.85.0
   - terraform@1.0.4
@@ -177,13 +178,10 @@ tfenv:
     - 1.0.10
 rbenv_default_gems:
 - bundler
+# - gem-src # NOTE: エラーを引き起こすためスキップ
+- gemdiff
 - mgem
 - neovim
-- rubocop
-- gemdiff
-- gem-src
-- debug
-- ruby-lsp
 ghq:
 - asdf-vm/asdf
 - ookamiinc/kinto
