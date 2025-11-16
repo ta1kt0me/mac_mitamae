@@ -93,6 +93,7 @@ rust_packages:
 # - mise
 - ripgrep
 gh_repos:
+- acheronfail/repgrep
 - apstndb/spanner-mycli
 git:
 - repo: "git@github.com:syndbg/goenv.git"
@@ -130,6 +131,7 @@ mise:
   - direnv@latest
   - gh@latest
   - peco@latest
+  - sd@latest
   plugins:
   - awscli
   - bat
