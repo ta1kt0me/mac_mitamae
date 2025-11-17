@@ -198,7 +198,7 @@ default_python_packages:
 - neovim
 - powerline-status
 - pynvim
-npm:
+default_npm_packages:
 - yarn
 git_config:
 - key: core.editor

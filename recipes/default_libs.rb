@@ -18,3 +18,11 @@ file "#{home_path + "/.default-python-packages"}" do
   owner node[:user]
   mode '644'
 end
+
+# npm
+file "#{home_path + "/.default-npm-packages"}" do
+  user node[:user]
+  content node[:default_npm_packages].join("\n").concat("\n")
+  owner node[:user]
+  mode '644'
+end
