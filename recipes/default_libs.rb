@@ -6,13 +6,7 @@ home_path = "#{home_dir}/" + node[:user]
 # bundler
 file "#{home_path + "/.default-gems"}" do
   user node[:user]
-  content <<-EOS
-bundler
-gemdiff
-mgem
-neovim
-rubocop
-  EOS
+  content node[:default_gems].join("\n").concat("\n")
   owner node[:user]
   mode '644'
 end
@@ -20,13 +14,7 @@ end
 # pip
 file "#{home_path + "/.default-python-packages"}" do
   user node[:user]
-  content <<-EOS
-boto
-httpie
-neovim
-powerline-status
-pynvim
-  EOS
+  content node[:default_python_packages].join("\n").concat("\n")
   owner node[:user]
   mode '644'
 end

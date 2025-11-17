@@ -10,8 +10,8 @@ packages:
 - jo
 - jq
 - mycli
-- openssl
-- postgresql
+- openssl@3
+- postgresql@18
 - rlwrap
 - tig
 - tmux
@@ -176,7 +176,7 @@ tfenv:
   versions:
     - 1.0.4
     - 1.0.10
-rbenv_default_gems:
+default_gems:
 - bundler
 # - gem-src # NOTE: エラーを引き起こすためスキップ
 - gemdiff
@@ -192,7 +192,7 @@ ghq:
 - ta1kt0me/fish-config
 - ta1kt0me/mac_mitamae
 - yochiyochirb/vimrc
-pip:
+default_python_packages:
 - boto
 - httpie
 - neovim
