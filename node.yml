@@ -80,18 +80,6 @@ apt_packages:
 - timeshift
 - translate-shell
 - zlib1g-dev
-go_packages_by_release:
-# - peco/peco
-go_packages:
-# - direnv/direnv
-# - x-motemen/ghq
-- yusukebe/rj/cmd/rj
-- yusukebe/t/cmd/t
-rust_packages:
-# - bat
-# - cargo-update
-# - mise
-- ripgrep
 gh_repos:
 - acheronfail/repgrep
 - apstndb/spanner-mycli
@@ -117,10 +105,13 @@ git:
 mise:
   packages:
   - go@1.19.5
+  - go@1.19.6
   - node@18.12.0
   - node@20.19.5
+  - node@22.20.0
   - python@3.9.6
   - python@3.10.19
+  - python@3.11.14
   - ruby@3.2.3
   - ruby@3.3.2
   - ruby@3.3.10
@@ -142,46 +133,6 @@ mise:
   - lazygit
   - ripgrep
   - yq
-nodejs:
-  version: v18.12.0
-rbenv:
-  global:
-    3.2.0
-  versions:
-    - 3.2.0
-pyenv:
-  global:
-    3.9.6
-  versions:
-    - 3.7.11
-    - 3.9.6
-rust:
-  global:
-    1.85.0
-  versions:
-    - 1.67.0
-    - 1.76.0
-    - 1.85.0
-goenv:
-  global:
-    1.19.5
-  versions:
-    - 1.16.8
-    - 1.17.1
-    - 1.18.10
-    - 1.19.5
-tfenv:
-  global:
-    1.0.4
-  versions:
-    - 1.0.4
-    - 1.0.10
-default_gems:
-- bundler
-# - gem-src # NOTE: エラーを引き起こすためスキップ
-- gemdiff
-- mgem
-- neovim
 ghq:
 - asdf-vm/asdf
 - ookamiinc/kinto
@@ -192,6 +143,15 @@ ghq:
 - ta1kt0me/fish-config
 - ta1kt0me/mac_mitamae
 - yochiyochirb/vimrc
+default_gems:
+- bundler
+# - gem-src # NOTE: エラーを引き起こすためスキップ
+- gemdiff
+- mgem
+- neovim
+default_go_packages:
+- github.com/yusukebe/rj/cmd/rj
+- github.com/yusukebe/t/cmd/t
 default_python_packages:
 - boto
 - httpie

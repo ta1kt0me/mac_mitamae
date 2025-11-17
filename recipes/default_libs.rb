@@ -26,3 +26,11 @@ file "#{home_path + "/.default-npm-packages"}" do
   owner node[:user]
   mode '644'
 end
+
+# go
+file "#{home_path + "/.default-go-packages"}" do
+  user node[:user]
+  content node[:default_go_packages].join("\n").concat("\n")
+  owner node[:user]
+  mode '644'
+end
