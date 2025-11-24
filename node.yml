@@ -84,24 +84,10 @@ gh_repos:
 - acheronfail/repgrep
 - apstndb/spanner-mycli
 git:
-- repo: "git@github.com:syndbg/goenv.git"
-  dist: ".goenv"
-- repo: "git@github.com:pyenv/pyenv.git"
-  dist: ".pyenv"
-- repo: "git@github.com:rbenv/rbenv.git"
-  dist: ".rbenv"
-- repo: "git@github.com:rbenv/ruby-build.git"
-  dist: ".rbenv/plugins/ruby-build"
-- repo: "git@github.com:rbenv/rbenv-default-gems.git"
-  dist: ".rbenv/plugins/rbenv-default-gems"
-- repo: "git@github.com:amatsuda/gem-src.git"
-  dist: ".rbenv/plugins/gem-src"
 - repo: "git@github.com:ta1kt0me/fish-config.git"
   dist: ".config/fish"
 - repo: "git@github.com:albertlauncher/python.git"
   dist: ".local/share/albert/org.albert.extension.python/modules"
-- repo: "git@github.com:tfutils/tfenv.git"
-  dist: ".tfenv"
 mise:
   packages:
   - go@1.19.5
