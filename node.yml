@@ -116,7 +116,7 @@ mise:
   - gcloud
   - ghq
   - hub
-  - lazygit
+  # - lazygit
   - ripgrep
   - yq
 ghq:
