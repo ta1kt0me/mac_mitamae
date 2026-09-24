@@ -1,4 +1,4 @@
-class Specinfra::Command::Pop < Specinfra::Command::Ubuntu; end
+include_recipe 'platform_helper'
 
 if node[:platform] == "pop"
   node[:apt_packages].each do |item|

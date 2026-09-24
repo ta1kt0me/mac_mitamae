@@ -1,4 +1,4 @@
-class Specinfra::Command::Pop < Specinfra::Command::Ubuntu; end
+include_recipe "./recipes/platform_helper.rb"
 
 include_recipe "./recipes/homebrew.rb"
 include_recipe "./recipes/mac_packages.rb" if node[:platform] == "darwin"
