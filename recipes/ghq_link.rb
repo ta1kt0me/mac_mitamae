@@ -2,9 +2,9 @@ include_recipe 'directory_helper'
 
 home_path   = DirectoryHelper.home_path(node)
 config_path = home_path + "/.config"
-ghq_path    = `git config --get ghq.root`.gsub("\n", "")
-
-raise 'First, set ghq.root in git config' if ghq_path.empty?
+ghq_root    = node[:git_config].find { |config| config[:key] == "ghq.root" }
+raise "First, set ghq.root in git_config of node.yml" unless ghq_root
+ghq_path    = ghq_root[:value].sub("$HOME", home_path)
 
 links = [
   { from: home_path   + "/.vimrc",            to: ghq_path + "/github.com/ta1kt0me/vimrc/.vimrc" },
