@@ -129,9 +129,7 @@ default_go_packages:
 - github.com/yusukebe/rj/cmd/rj
 - github.com/yusukebe/t/cmd/t
 default_python_packages:
-- boto
 - httpie
-- neovim
 - powerline-status
 - pynvim
 default_npm_packages:
