@@ -218,13 +218,13 @@ tig_config:
       value: '@bash -c "git checkout %(commit)"'
     - view: blame
       keybind: <Ctrl-b>
-      value: '@bash -c "hub browse -- commit/%(commit)"'
+      value: '@bash -c "gh browse %(commit)"'
     - view: diff
       keybind: <Ctrl-b>
-      value: '@bash -c "hub browse -- commit/%(commit)"'
+      value: '@bash -c "gh browse %(commit)"'
     - view: log
       keybind: <Ctrl-b>
-      value: '@bash -c "hub browse -- commit/%(commit)"'
+      value: '@bash -c "gh browse %(commit)"'
     - view: main
       keybind: <Ctrl-b>
-      value: '@bash -c "hub browse -- commit/%(commit)"'
+      value: '@bash -c "gh browse %(commit)"'
