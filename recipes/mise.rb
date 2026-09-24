@@ -6,6 +6,7 @@ mise = "#{home_path}/.local/bin/mise"
 execute "Install mise" do
   user node[:user]
   command "curl https://mise.run | sh"
+  not_if "test -x #{mise}"
 end
 
 node[:mise][:packages].each do |package|
