@@ -13,7 +13,7 @@ node[:mise][:packages].each do |package|
   execute "Install #{package} via mise" do
     user node[:user]
     command "#{mise} install #{package}"
-    only_if "test -z $(#{mise} ls #{package.split('@').first} | grep #{package.split('@').last})"
+    not_if "#{mise} where #{package}"
   end
 
   execute "Activate #{package} via mise" do
