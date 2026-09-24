@@ -7,4 +7,15 @@ module DirectoryHelper
   def self.local_bin_path(node)
     "#{home_path(node)}/.local/bin"
   end
+
+  def self.ghq_root(node)
+    config = node[:git_config].find { |c| c[:key] == "ghq.root" }
+    raise "First, set ghq.root in git_config of node.yml" unless config
+
+    value = config[:value]
+    ["${HOME}", "$HOME", "~"].each do |prefix|
+      return home_path(node) + value[prefix.size..-1] if value.start_with?(prefix)
+    end
+    value
+  end
 end
