@@ -8,9 +8,7 @@ dirs = [
 ]
 
 dirs.each do |dir|
-  execute "mkdir #{dir}" do
+  directory dir do
     user node[:user]
-    command "mkdir -p #{dir}"
-    not_if "test -d #{dir}"
   end
 end
