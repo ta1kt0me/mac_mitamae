@@ -4,10 +4,8 @@ set -eux
 
 cd "$(dirname "$0")/.."
 
+# --log-level=debug
 if [[ "$(uname -s)" = "Linux" ]]; then
-  # --log-level=debug
-  sudo bin/mitamae local -y node.yml --shell=/bin/bash recipes/apt_packages.rb
-  bin/mitamae local -y node.yml --shell=/bin/bash init.rb
-else
-  bin/mitamae local -y node.yml init.rb
+  sudo bin/mitamae local -y node.yml recipes/apt_packages.rb
 fi
+bin/mitamae local -y node.yml init.rb

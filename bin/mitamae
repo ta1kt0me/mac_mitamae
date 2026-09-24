@@ -14,4 +14,9 @@ case "$(uname -s)-$(uname -m)" in
     ;;
 esac
 
+if [[ "$(uname -s)" = "Linux" && "${1:-}" = "local" ]]; then
+  shift
+  set -- local --shell=/bin/bash "$@"
+fi
+
 exec "$bin_dir/mitamae-$target" "$@"

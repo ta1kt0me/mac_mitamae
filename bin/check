@@ -6,9 +6,4 @@ set -eu
 
 cd "$(dirname "$0")/.."
 
-shell_opt=""
-if [[ "$(uname -s)" = "Linux" ]]; then
-  shell_opt="--shell=/bin/bash"
-fi
-
-bin/mitamae local -n -y node.yml $shell_opt init.rb
+bin/mitamae local -n -y node.yml init.rb
