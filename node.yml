@@ -71,8 +71,9 @@ apt_packages:
 - translate-shell
 - zlib1g-dev
 gh_repos:
-- acheronfail/repgrep
-- apstndb/spanner-mycli
+- repo: acheronfail/repgrep
+  bin: rgr
+- repo: apstndb/spanner-mycli
 git:
 - repo: "git@github.com:ta1kt0me/fish-config.git"
   dist: ".config/fish"
