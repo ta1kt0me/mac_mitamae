@@ -15,6 +15,9 @@ bin/setup
 # setup my machine
 bin/migrate
 
+# dry-run recipes
+bin/check
+
 # update mitamae and submodules
 bin/update
 ```
