@@ -1,14 +1,9 @@
-node[:tig_config][:set].each do |config|
-  execute "Set tig config `set #{config}`" do
-    command "echo 'set #{config}' >> $HOME/.tigrc"
-    not_if "test $(grep 'set #{config}' $HOME/.tigrc | wc -l | xargs) -gt 0"
-  end
-end
+include_recipe 'directory_helper'
 
-node[:tig_config][:bind].each do |config|
-  conf = "bind #{config.view} #{config.keybind} #{config.value}"
-  execute "Set tig config `#{conf}`" do
-    command "echo '#{conf}' >> $HOME/.tigrc"
-    not_if "test $(grep '#{conf}' $HOME/.tigrc | wc -l | xargs) -gt 0"
-  end
+lines = node[:tig_config][:set].map { |config| "set #{config}" } +
+  node[:tig_config][:bind].map { |config| "bind #{config[:view]} #{config[:keybind]} #{config[:value]}" }
+
+file "#{DirectoryHelper.home_path(node)}/.tigrc" do
+  user node[:user]
+  content lines.join("\n") + "\n"
 end
