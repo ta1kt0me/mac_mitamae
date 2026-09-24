@@ -1,15 +1,16 @@
 include_recipe 'directory_helper'
 
-HOME_DIR = DirectoryHelper.home_path(node)
+home_path = DirectoryHelper.home_path(node)
+bin_path  = "#{home_path}/.local/bin"
 
 execute "Install eget" do
   user node[:user]
-  command "curl https://zyedidia.github.io/eget.sh | sh && mv eget #{HOME_DIR}/.local/bin/"
+  command "curl https://zyedidia.github.io/eget.sh | sh && mv eget #{bin_path}/"
 end
 
 node[:gh_repos].each do |repo|
   execute "Install #{repo} via eget" do
     user node[:user]
-    command "#{HOME_DIR}/.local/bin/eget #{repo} --to #{HOME_DIR}/.local/bin"
+    command "#{bin_path}/eget #{repo} --to #{bin_path}"
   end
 end
