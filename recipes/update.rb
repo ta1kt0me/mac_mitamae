@@ -5,18 +5,14 @@ include_recipe 'mise_helper'
 
 mise = MiseHelper.path(node)
 
-node[:mise][:plugins].each do |plugin|
-  execute "Update #{plugin} plugin via mise" do
-    user node[:user]
-    command "#{mise} plugins update #{plugin}"
-  end
+execute "Update mise plugins" do
+  user node[:user]
+  command "#{mise} plugins update #{node[:mise][:plugins].join(' ')}"
 end
 
-MiseHelper.latest_tools(node).each do |tool|
-  execute "Update #{tool} via mise" do
-    user node[:user]
-    command "#{mise} use --global #{tool}"
-  end
+execute "Update latest tools via mise" do
+  user node[:user]
+  command "#{mise} use --global #{MiseHelper.latest_tools(node).join(' ')}"
 end
 
 node[:gh_repos].each do |gh_repo|
