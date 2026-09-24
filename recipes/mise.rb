@@ -1,6 +1,6 @@
 include_recipe 'directory_helper'
 
-HOME_DIR = DirectoryHelper.home(node) + "/" + node[:user]
+HOME_DIR = DirectoryHelper.home_path(node)
 
 execute "Install mise" do
   user node[:user]

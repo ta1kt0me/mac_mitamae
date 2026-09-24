@@ -1,7 +1,6 @@
 include_recipe 'directory_helper'
 
-home_dir = DirectoryHelper.home(node)
-home_path    = "#{home_dir}/" + node[:user]
+home_path    = DirectoryHelper.home_path(node)
 dropbox_path = home_path + "/Dropbox"
 config_path  = home_path + "/.config"
 

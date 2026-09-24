@@ -1,7 +1,6 @@
 include_recipe 'directory_helper'
 
-home_dir = DirectoryHelper.home(node)
-home_path = "#{home_dir}/" + node[:user]
+home_path = DirectoryHelper.home_path(node)
 
 # bundler
 file "#{home_path + "/.default-gems"}" do
