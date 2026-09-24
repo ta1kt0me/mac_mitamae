@@ -6,13 +6,21 @@ set -eu
 cd "$(dirname "$0")/.."
 
 git submodule update
+
+version_file=bin/.mitamae-version
 latest_version=$(curl -fsSL https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest | ruby -rjson -e 'puts JSON.parse(STDIN.read)["tag_name"]')
+current_version=$(cat "$version_file" 2>/dev/null || true)
+
+if [[ "$current_version" = "$latest_version" ]]; then
+  echo "mitamae ${latest_version} is up to date"
+  exit 0
+fi
+
 for target in aarch64-darwin x86_64-darwin x86_64-linux; do
   binary=bin/mitamae-${target}
-  current_version=$($binary version 2>/dev/null || true)
-  if [[ ! "${current_version#mitamae }" = "${latest_version}" ]]; then
-    wget -O "${binary}.tmp" "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-${target}"
-    chmod +x "${binary}.tmp"
-    mv "${binary}.tmp" "${binary}"
-  fi
+  wget -O "${binary}.tmp" "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-${target}"
+  chmod +x "${binary}.tmp"
+  mv "${binary}.tmp" "${binary}"
 done
+
+echo "$latest_version" > "$version_file"
