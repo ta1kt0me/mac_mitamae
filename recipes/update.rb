@@ -1,9 +1,10 @@
 # Update tools to the latest. Run by bin/update, not by init.rb.
 
 include_recipe 'directory_helper'
+include_recipe 'mise_helper'
 
 bin_path = DirectoryHelper.local_bin_path(node)
-mise = "#{bin_path}/mise"
+mise = MiseHelper.path(node)
 
 node[:mise][:plugins].each do |plugin|
   execute "Update #{plugin} plugin via mise" do
@@ -12,10 +13,7 @@ node[:mise][:plugins].each do |plugin|
   end
 end
 
-latest_tools = node[:mise][:packages].select { |package| package.end_with?("@latest") } +
-  node[:mise][:plugins].map { |plugin| "#{plugin}@latest" }
-
-latest_tools.each do |tool|
+MiseHelper.latest_tools(node).each do |tool|
   execute "Update #{tool} via mise" do
     user node[:user]
     command "#{mise} use --global #{tool}"

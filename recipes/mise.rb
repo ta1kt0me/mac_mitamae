@@ -1,22 +1,11 @@
-include_recipe 'directory_helper'
+include_recipe 'mise_helper'
 
-mise = "#{DirectoryHelper.local_bin_path(node)}/mise"
+mise = MiseHelper.path(node)
 
 execute "Install mise" do
   user node[:user]
   command "curl https://mise.run | sh"
   not_if "test -x #{mise}"
-end
-
-# `mise use` installs the version if it is missing
-node[:mise][:packages].each do |package|
-  tool, version = package.split("@")
-  execute "Activate #{package} via mise" do
-    user node[:user]
-    command "#{mise} use --global #{package}"
-    # @latest is updated by bin/update
-    not_if "test -n \"$(#{mise} ls --global #{tool})\"" if version == "latest"
-  end
 end
 
 node[:mise][:plugins].each do |plugin|
@@ -25,10 +14,21 @@ node[:mise][:plugins].each do |plugin|
     command "#{mise} plugins install #{plugin}"
     not_if "#{mise} plugins ls | grep -qx #{plugin}"
   end
+end
 
-  execute "Activate #{plugin} via mise" do
+# `mise use` installs the version if it is missing
+MiseHelper.pinned_tools(node).each do |tool|
+  execute "Activate #{tool} via mise" do
     user node[:user]
-    command "#{mise} use --global #{plugin}@latest"
-    not_if "test -n \"$(#{mise} ls --global #{plugin})\""
+    command "#{mise} use --global #{tool}"
+  end
+end
+
+# only activate here; bin/update updates them
+MiseHelper.latest_tools(node).each do |tool|
+  execute "Activate #{tool} via mise" do
+    user node[:user]
+    command "#{mise} use --global #{tool}"
+    not_if "test -n \"$(#{mise} ls --global #{tool.split('@').first})\""
   end
 end
