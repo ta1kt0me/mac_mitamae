@@ -1,7 +1,6 @@
 include_recipe 'directory_helper'
 
-home_path = DirectoryHelper.home_path(node)
-bin_path  = "#{home_path}/.local/bin"
+bin_path = DirectoryHelper.local_bin_path(node)
 
 execute "Install eget" do
   user node[:user]
