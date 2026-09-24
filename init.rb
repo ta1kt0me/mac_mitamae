@@ -23,7 +23,6 @@ if node[:platform] == "pop"
 end
 
 include_recipe "./recipes/ghq.rb"
-include_recipe "./recipes/packages_with_build.rb"
 include_recipe "./recipes/ghq_link.rb"
 include_recipe "./recipes/vim.rb"
 include_recipe "./recipes/font.rb"
