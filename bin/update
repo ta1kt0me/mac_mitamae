@@ -7,8 +7,12 @@ root_dir=$bin_dir/..
 cd $root_dir
 git submodule update
 latest_version=$(ruby -e "require 'json';puts JSON.parse(ARGV.join).dig('tag_name')" $(curl https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest))
-current_version=$(bin/mitamae-x86_64-darwin version)
-if [[ ! "${current_version#MItamae }" = "${latest_version}" ]]; then
-  wget -O - "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-x86_64-darwin.tar.gz" | tar zxvf - -C ${bin_dir}
-  wget -O - "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-x86_64-linux.tar.gz" | tar zxvf - -C ${bin_dir}
-fi
+for target in aarch64-darwin x86_64-darwin x86_64-linux; do
+  binary=bin/mitamae-${target}
+  current_version=$($binary version 2>/dev/null)
+  if [[ ! "${current_version#mitamae }" = "${latest_version}" ]]; then
+    wget -O "${binary}.tmp" "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-${target}" \
+      && chmod +x "${binary}.tmp" \
+      && mv "${binary}.tmp" "${binary}"
+  fi
+done
