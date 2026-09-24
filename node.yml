@@ -9,7 +9,6 @@ packages:
 - htop
 - jo
 - jq
-- mycli
 - openssl@3
 - postgresql@18
 - rlwrap
