@@ -9,10 +9,10 @@ execute "Install eget" do
 end
 
 node[:gh_repos].each do |gh_repo|
-  bin = gh_repo[:bin] || gh_repo[:repo].split('/').last
+  target = DirectoryHelper.eget_bin_path(node, gh_repo)
   execute "Install #{gh_repo[:repo]} via eget" do
     user node[:user]
-    command "#{bin_path}/eget #{gh_repo[:repo]} --to #{bin_path}/#{bin}"
-    not_if "test -x #{bin_path}/#{bin}"
+    command "#{bin_path}/eget #{gh_repo[:repo]} --to #{target}"
+    not_if "test -x #{target}"
   end
 end

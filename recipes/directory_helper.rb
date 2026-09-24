@@ -8,6 +8,11 @@ module DirectoryHelper
     "#{home_path(node)}/.local/bin"
   end
 
+  # where eget installs the binary of a gh_repos entry in node.yml
+  def self.eget_bin_path(node, gh_repo)
+    "#{local_bin_path(node)}/#{gh_repo[:bin] || gh_repo[:repo].split('/').last}"
+  end
+
   def self.ghq_root(node)
     config = node[:git_config].find { |c| c[:key] == "ghq.root" }
     raise "First, set ghq.root in git_config of node.yml" unless config

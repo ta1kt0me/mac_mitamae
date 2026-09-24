@@ -3,7 +3,6 @@
 include_recipe 'directory_helper'
 include_recipe 'mise_helper'
 
-bin_path = DirectoryHelper.local_bin_path(node)
 mise = MiseHelper.path(node)
 
 node[:mise][:plugins].each do |plugin|
@@ -21,10 +20,9 @@ MiseHelper.latest_tools(node).each do |tool|
 end
 
 node[:gh_repos].each do |gh_repo|
-  bin = gh_repo[:bin] || gh_repo[:repo].split('/').last
   execute "Update #{gh_repo[:repo]} via eget" do
     user node[:user]
-    command "#{bin_path}/eget --upgrade-only #{gh_repo[:repo]} --to #{bin_path}/#{bin}"
+    command "#{DirectoryHelper.local_bin_path(node)}/eget --upgrade-only #{gh_repo[:repo]} --to #{DirectoryHelper.eget_bin_path(node, gh_repo)}"
   end
 end
 
