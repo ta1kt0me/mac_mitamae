@@ -166,7 +166,7 @@ git_config:
 - key: alias.conf
   value: "! cat .git/config"
 - key: alias.gconf
-  value: "! cat /Users/toku/.gitconfig"
+  value: "! cat ~/.gitconfig"
 - key: alias.remaster
   value: "! git fetch && git rebase -i origin/master"
 - key: alias.remain
