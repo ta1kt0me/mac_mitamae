@@ -1,9 +1,6 @@
 module DirectoryHelper
-  def self.home(node)
-    node[:platform] == "darwin" ? "/Users" : "/home"
-  end
-
   def self.home_path(node)
-    "#{home(node)}/#{node[:user]}"
+    home_dir = node[:platform] == "darwin" ? "/Users" : "/home"
+    "#{home_dir}/#{node[:user]}"
   end
 end
