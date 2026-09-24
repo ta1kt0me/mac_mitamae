@@ -116,7 +116,6 @@ ghq:
 - rails/rails
 - rupa/z
 - ta1kt0me/vimrc
-- ta1kt0me/fish-config
 - ta1kt0me/mac_mitamae
 - yochiyochirb/vimrc
 default_gems:
