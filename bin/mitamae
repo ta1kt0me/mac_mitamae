@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eu
+
+bin_dir=$(cd "$(dirname "$0")" && pwd)
+
+case "$(uname -s)-$(uname -m)" in
+  Darwin-arm64)  target=aarch64-darwin ;;
+  Darwin-x86_64) target=x86_64-darwin ;;
+  Linux-x86_64)  target=x86_64-linux ;;
+  *)
+    echo "unsupported platform: $(uname -s)-$(uname -m)" >&2
+    exit 1
+    ;;
+esac
+
+exec "$bin_dir/mitamae-$target" "$@"

@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # set -x
+set -eu
 
-bin_dir=$(dirname $0)
-root_dir=$bin_dir/..
-cd $root_dir
+cd "$(dirname "$0")/.."
+
 git submodule update
-latest_version=$(ruby -e "require 'json';puts JSON.parse(ARGV.join).dig('tag_name')" $(curl https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest))
+latest_version=$(curl -fsSL https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest | ruby -rjson -e 'puts JSON.parse(STDIN.read)["tag_name"]')
 for target in aarch64-darwin x86_64-darwin x86_64-linux; do
   binary=bin/mitamae-${target}
-  current_version=$($binary version 2>/dev/null)
+  current_version=$($binary version 2>/dev/null || true)
   if [[ ! "${current_version#mitamae }" = "${latest_version}" ]]; then
-    wget -O "${binary}.tmp" "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-${target}" \
-      && chmod +x "${binary}.tmp" \
-      && mv "${binary}.tmp" "${binary}"
+    wget -O "${binary}.tmp" "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-${target}"
+    chmod +x "${binary}.tmp"
+    mv "${binary}.tmp" "${binary}"
   fi
 done
