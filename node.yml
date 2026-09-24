@@ -30,15 +30,6 @@ homebrew_packages:
 apt_repositories:
 - ppa:git-core/ppa
 - ppa:aslatter/ppa
-asdf_packages:
-- name: awscli
-  version: latest
-- name: github-cli
-  version: latest
-- name: hub
-  version: v2.14.2
-- name: yq
-  version: latest
 apt_packages:
 - software-properties-common
 - apt-transport-https
@@ -119,7 +110,6 @@ mise:
   - ripgrep
   - yq
 ghq:
-- asdf-vm/asdf
 - ookamiinc/kinto
 - powerline/fonts
 - rails/rails

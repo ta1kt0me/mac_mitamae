@@ -1,8 +1,6 @@
 class Specinfra::Command::Pop < Specinfra::Command::Ubuntu; end
 
 include_recipe "./recipes/homebrew.rb"
-# TODO: check linux
-# include_recipe "./recipes/linuxbrew.rb" if node[:platform] == "pop"
 include_recipe "./recipes/mac_packages.rb" if node[:platform] == "darwin"
 include_recipe "./recipes/mkdir.rb"
 include_recipe "./recipes/default_libs.rb"
@@ -27,7 +25,5 @@ end
 include_recipe "./recipes/ghq.rb"
 include_recipe "./recipes/packages_with_build.rb"
 include_recipe "./recipes/ghq_link.rb"
-# include_recipe "./recipes/asdf.rb"
 include_recipe "./recipes/vim.rb"
 include_recipe "./recipes/font.rb"
-# include_recipe "./recipes/ngrok.rb"

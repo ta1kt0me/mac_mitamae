@@ -4,7 +4,6 @@ home_dir = DirectoryHelper.home(node)
 home_path = "#{home_dir}/" + node[:user]
 dirs = [
   home_path + "/.vim",
-  home_path + "/.ghq",
   home_path + "/.ssh_local",
   home_path + "/.gotools"
 ]
