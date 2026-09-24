@@ -18,6 +18,6 @@ bin/migrate
 # dry-run recipes
 bin/check
 
-# update mitamae and submodules
+# update mitamae, submodules and tools (mise plugins, eget, vim plugins)
 bin/update
 ```
