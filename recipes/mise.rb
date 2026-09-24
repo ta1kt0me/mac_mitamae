@@ -8,13 +8,8 @@ execute "Install mise" do
   not_if "test -x #{mise}"
 end
 
+# `mise use` installs the version if it is missing
 node[:mise][:packages].each do |package|
-  execute "Install #{package} via mise" do
-    user node[:user]
-    command "#{mise} install #{package}"
-    not_if "#{mise} where #{package}"
-  end
-
   execute "Activate #{package} via mise" do
     user node[:user]
     command "#{mise} use --global #{package}"
