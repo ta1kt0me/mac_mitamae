@@ -20,7 +20,7 @@ node[:mise][:plugins].each do |plugin|
   execute "Install #{plugin} via mise" do
     user node[:user]
     command "#{mise} plugins install #{plugin}"
-    only_if "test -z $(#{mise} ls #{plugin})"
+    not_if "#{mise} plugins ls | grep -qx #{plugin}"
   end
 
   execute "Update #{plugin} via mise" do
