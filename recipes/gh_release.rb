@@ -4,7 +4,7 @@ bin_path = DirectoryHelper.local_bin_path(node)
 
 execute "Install eget" do
   user node[:user]
-  command "curl https://zyedidia.github.io/eget.sh | sh && mv eget #{bin_path}/"
+  command "curl -fsSL https://zyedidia.github.io/eget.sh | sh && mv eget #{bin_path}/"
   not_if "test -x #{bin_path}/eget"
 end
 
