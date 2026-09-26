@@ -87,12 +87,17 @@ mise:
   - node@24.20.0
   - python@3.10.19
   - python@3.11.14
+  - python@3.12.14
+  - python@3.14.7
   - ruby@3.2.3
   - ruby@3.3.2
   - ruby@3.3.10
   - ruby@3.4.7
+  - ruby@3.4.11
+  - ruby@4.0.7
   - rust@1.76.0
   - rust@1.85.0
+  - rust@1.98.1
   - direnv@latest
   - gh@latest
   - peco@latest
