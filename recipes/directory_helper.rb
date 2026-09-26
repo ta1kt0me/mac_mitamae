@@ -17,7 +17,11 @@ module DirectoryHelper
     config = node[:git_config].find { |c| c[:key] == "ghq.root" }
     raise "First, set ghq.root in git_config of node.yml" unless config
 
-    value = config[:value]
+    expand_home(node, config[:value])
+  end
+
+  # replace a leading $HOME, ${HOME} or ~ with the home path
+  def self.expand_home(node, value)
     ["${HOME}", "$HOME", "~"].each do |prefix|
       return home_path(node) + value[prefix.size..-1] if value.start_with?(prefix)
     end
