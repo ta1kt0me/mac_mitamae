@@ -69,6 +69,7 @@ apt_packages:
 - simple-scan
 - timeshift
 - translate-shell
+- xsel
 - zlib1g-dev
 gh_repos:
 - repo: acheronfail/repgrep
