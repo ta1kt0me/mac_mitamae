@@ -1,7 +1,9 @@
 include_recipe "./recipes/platform_helper.rb"
 
-include_recipe "./recipes/homebrew.rb"
-include_recipe "./recipes/mac_packages.rb" if node[:platform] == "darwin"
+if node[:platform] == "darwin"
+  include_recipe "./recipes/homebrew.rb"
+  include_recipe "./recipes/mac_packages.rb"
+end
 include_recipe "./recipes/mkdir.rb"
 include_recipe "./recipes/default_libs.rb"
 include_recipe "./recipes/mise.rb"
