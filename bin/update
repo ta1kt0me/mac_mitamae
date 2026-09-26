@@ -5,20 +5,10 @@ set -eu
 
 cd "$(dirname "$0")/.."
 
-git submodule update
+git submodule update --remote
 
-version_file=bin/.mitamae-version
-latest_version=$(curl -fsSL https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest | ruby -rjson -e 'puts JSON.parse(STDIN.read)["tag_name"]')
-current_version=$(cat "$version_file" 2>/dev/null || true)
-
-if [[ "$current_version" != "$latest_version" ]]; then
-  for target in aarch64-darwin x86_64-darwin x86_64-linux; do
-    binary=bin/mitamae-${target}
-    wget -O "${binary}.tmp" "https://github.com/itamae-kitchen/mitamae/releases/download/${latest_version}/mitamae-${target}"
-    chmod +x "${binary}.tmp"
-    mv "${binary}.tmp" "${binary}"
-  done
-  echo "$latest_version" > "$version_file"
-fi
+# bin/mitamae downloads the version written here
+curl -fsSL https://api.github.com/repos/itamae-kitchen/mitamae/releases/latest \
+  | ruby -rjson -e 'puts JSON.parse(STDIN.read)["tag_name"]' > bin/.mitamae-version
 
 bin/mitamae local -y node.yml recipes/update.rb

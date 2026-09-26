@@ -4,4 +4,7 @@ set -eux
 
 cd "$(dirname "$0")/.."
 
-git submodule update -i
+git submodule update --init
+
+# download mitamae
+bin/mitamae version

@@ -14,9 +14,26 @@ case "$(uname -s)-$(uname -m)" in
     ;;
 esac
 
+# download the version in .mitamae-version unless it is already there
+version=$(cat "$bin_dir/.mitamae-version")
+binary=$bin_dir/mitamae-${target}-${version}
+if [[ ! -x "$binary" ]]; then
+  url=https://github.com/itamae-kitchen/mitamae/releases/download/${version}
+  tmp_dir=$(mktemp -d)
+  trap 'rm -rf "$tmp_dir"' EXIT
+  curl -fsSL -o "$tmp_dir/mitamae-${target}" "$url/mitamae-${target}"
+  curl -fsSL -o "$tmp_dir/SHA256SUMS" "$url/SHA256SUMS"
+  (cd "$tmp_dir" && grep " mitamae-${target}\$" SHA256SUMS | shasum -a 256 -c - >&2)
+  rm -f "$bin_dir"/mitamae-${target}-*
+  chmod +x "$tmp_dir/mitamae-${target}"
+  mv "$tmp_dir/mitamae-${target}" "$binary"
+  rm -rf "$tmp_dir"
+  trap - EXIT
+fi
+
 if [[ "$(uname -s)" = "Linux" && "${1:-}" = "local" ]]; then
   shift
   set -- local --shell=/bin/bash "$@"
 fi
 
-exec "$bin_dir/mitamae-$target" "$@"
+exec "$binary" "$@"

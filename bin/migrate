@@ -6,6 +6,7 @@ cd "$(dirname "$0")/.."
 
 # --log-level=debug
 if [[ "$(uname -s)" = "Linux" ]]; then
+  bin/mitamae version # download mitamae as the user, not root
   sudo bin/mitamae local -y node.yml recipes/apt_packages.rb
 fi
 bin/mitamae local -y node.yml init.rb
